@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <title>DM - Funcionários</title>
+    <title>DM - Vendas</title>
 </head>
 <body>
     <!------------------INICIO DO CABECALHO--------------------------->
@@ -23,17 +23,40 @@
         </div>
     </div>
     <!---------------------FIM DO CABECALHO---------------------------->
+
     <div id="principal">
         <div id="principal-topo">
-            <h2 class="titulo-laranja">Funcionários</h2>    
+            <h2 class="titulo-laranja">Vendas</h2>    
         </div>        
         <div id="principal-corpo">
-            <ul>
-                <li>Vinicius Silveira Moraes</li>
-                <li>Isabela Rocha</li>
-                <li>Hendrik Liu</li>
-                <li>Vitor Costa</li>
-            </ul>
+            <form action="#">
+                <fieldset>
+                    <legend>Dados da Venda</legend>
+                    <div>
+                        <label for="cliente">Nome do Cliente</label>
+                        <input type="text" name="cliente" id="cliente">
+                    </div>
+                    <div>
+                        <label for="produto">Produto</label>
+                        <select name="produto" id="produto">
+                            <option value="copo">Copo</option>
+                            <option value="prato">Prato</option>
+                            <option value="garfo">Garfo</option>
+                            <option value="faca">Faca</option>
+                            <option value="colher">Colher</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="qtde">Quantidade</label>
+                        <input type="number" name="qtde" id="qtde">
+                    </div>
+                    <div>
+                        <label for="pagamento">Forma de Pagamento</label>
+                        <input class="radio" type="radio" name="pagamento" value="cartao">Cartão <br>
+                        <input class="radio" type="radio" name="pagamento" value="dinheiro">Dinheiro
+                    </div>
+                </fieldset>
+            </form>
         </div>
     </div>
     <!--------------------INICIO DO RODAPE DO SITE------------------------------>

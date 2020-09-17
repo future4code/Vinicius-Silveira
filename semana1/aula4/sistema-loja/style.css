@@ -43,6 +43,9 @@
     width: 70px;
 }
 
+input.radio{
+    width: auto;   
+}
 /*-------------FORMATAÇÃO DE ELEMENTOS---------------------*/
 body{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -51,6 +54,7 @@ body{
 }
 table{
     margin: 0 auto; /*Centraliza a tabela*/    
+    text-align: center;
 }
 th{
     text-align: center;
@@ -77,6 +81,9 @@ button{
 }
 button:active{
     background-color:#DF3A01 ;
+}
+input,select{
+    width: 200px;
 }
 ul{
     padding: 30px;
