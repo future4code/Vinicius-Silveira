@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>DM - Histórico de Vendas</title>
+</head>
+<body>
+    <!------------------INICIO DO CABECALHO--------------------------->
+    <div id="cabecalho">
+        <div id="logo">
+            <h1>Dumont <span class="texto-branco">Merchan</span></h1>
+        </div>
+        <div id="menu">
+            <a href="index.html">Página Inicial</a>
+            <a href="ctrl-estoque.html">Controle de Estoque</a>
+            <a href="add-produto.html">Adicionar Produto</a>
+            <a href="funcionarios.html">Funcionários</a>
+            <a href="vendas.html">Vendas</a>
+            <a href="historico.html">Histórico Vendas</a>
+        </div>
+    </div>
+    <!---------------------FIM DO CABECALHO---------------------------->
+    <div id="principal">
+        <div id="principal-topo">
+            <h2 class="titulo-laranja">Histórico de Vendas</h2>    
+        </div>        
+        <div id="principal-corpo">
+            <form action="#">
+                <fieldset>
+                    <legend>Histórico de Vendas</legend>
+                    <div>
+                        <label for="filtro">Digite a data para filtrar</label>
+                        <input type="text" name="filtro" id="filtro">
+                    </div>
+                    <table>
+                        <tr>
+                            <th>Funcionário</th>
+                            <th>Horário</th>
+                            <th>Valor Venda (R$)</th>
+                            <th>Forma de Pagamento</th>
+                        </tr>
+        
+                        <tr>
+                            <td>Vinicius Moraes</td>     
+                            <td>Copo de vidro</td>
+                            <td>R$5,00</td>
+                            <td>Cartão</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Vinicius Moraes</td>
+                            <td>Prato com fundo</td>
+                            <td>R$10,00</td>
+                            <td>Dinheiro</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Santos Dumont</td>
+                            <td>Garfo com 4 dentes</td>
+                            <td>R$100,00</td>
+                            <td>Dinheiro</td>
+                        </tr>
+                    </table>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+    <!--------------------INICIO DO RODAPE DO SITE------------------------------>
+    <div id="rodape">
+        <p><strong>Siga-nos nas redes sociais!</strong></p>
+        <div>
+            <img class="tamanho-imagem" src="https://image.flaticon.com/icons/png/512/25/25305.png"/>
+            <img class="tamanho-imagem" src="https://image.flaticon.com/icons/png/512/25/25425.png"/>
+            <img class="tamanho-imagem" src="https://image.flaticon.com/icons/png/512/8/8800.png"/>
+        </div>
+    </div>
+    <!----------------------FIM DO RODAPE DO SITE------------------------------->
+</body>
+</html>

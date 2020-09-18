@@ -1,0 +1,104 @@
+/*---------------ZERANDO AS MARGENS GERAIS ---------------*/
+*{
+    margin: 0;
+    padding: 0;    
+}
+
+/*--------------FORMATAÇÃO DAS IDS -----------------------*/
+#cabecalho, #rodape{
+    background-color: #FE642E;
+    text-align: center;
+}
+#menu, #logo{   
+    padding: 10px;
+}
+#principal{
+    width: 920px;    
+    margin: 10px auto;
+    text-align: center;
+    background-color: #FFF;
+}
+#principal-topo{
+    padding: 10px;
+}
+#principal-corpo{
+    padding: 10px;
+    height: 400px;
+}
+#principal p{
+    padding: 10px;
+}
+
+/*-------------FORMATAÇÃO DAS CLASSES----------------------*/
+.texto-branco{
+    color: #FFF;
+}
+.titulo-laranja{
+    color: #FE642E;
+}
+.tamanho-imagem{
+    width: 50px;
+}
+.imagem-tabela{
+    width: 70px;
+}
+
+input.radio{
+    width: auto;   
+}
+/*-------------FORMATAÇÃO DE ELEMENTOS---------------------*/
+body{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: #E6E6E6;
+    margin: 0 auto;
+}
+table{
+    margin: 0 auto; /*Centraliza a tabela*/    
+    text-align: center;
+}
+th{
+    text-align: center;
+    padding: 0 50px;
+}
+fieldset{
+    width: 500px;
+    padding: 10px;
+}
+legend{
+    font-weight: bolder;    
+}
+label{
+    display: block;
+}
+form{
+    text-align: left;
+}
+button{
+    margin-top:5px ;
+    padding: 8px;
+    background-color: #FE642E;
+    color: #FFF;
+}
+button:active{
+    background-color:#DF3A01 ;
+}
+input,select{
+    width: 200px;
+}
+ul{
+    padding: 30px;
+    margin: 10px;
+    text-align: left;
+}
+/*--------------FORMATAÇÃO DOS LINKS---------------------*/
+a:link, a:visited{
+    color: #FFF;
+    padding: 8px 12px;   
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    background-color: #FFF;
+    color: #FE642E;
+}

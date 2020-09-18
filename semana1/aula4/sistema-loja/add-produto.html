@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>DM - Adicionar Produto</title>
+</head>
+<body>
+    <!------------------INICIO DO CABECALHO--------------------------->
+    <div id="cabecalho">
+        <div id="logo">
+            <h1>Dumont <span class="texto-branco">Merchan</span></h1>
+        </div>
+        <div id="menu">
+            <a href="index.html">Página Inicial</a>
+            <a href="ctrl-estoque.html">Controle de Estoque</a>
+            <a href="add-produto.html">Adicionar Produto</a>
+            <a href="funcionarios.html">Funcionários</a>
+            <a href="vendas.html">Vendas</a>
+            <a href="historico.html">Histórico Vendas</a>
+        </div>
+    </div>
+    <!---------------------FIM DO CABECALHO---------------------------->
+
+    <!-------------------INICIO DA AREA PRINCIPAL----------------------->
+    <div id="principal">
+        <div id="principal-topo">
+            <h2 class="titulo-laranja">Adicionar Produto</h2>
+        </div>
+        <div id="principal-corpo">
+            <form action="#">
+                <fieldset>
+                    <legend>Detalhes do Produto</legend>
+                    <div>
+                        <label for="link-foto">Link para foto: </label>
+                        <input type="url" id="link-foto" name="link-foto">
+                    </div>
+                    
+                    <div>
+                        <label for="descricao">Descrição do produto: </label>           
+                        <input type="text" id="descricao" name="descrição">
+                    </div>
+                    
+                    <div>
+                        <label for="preco">Preço (em R$): </label>    
+                        <input type="number" id="preco" name="preço">
+                    </div>
+                    
+                    <div>            
+                        <label for="qtde">Quantidade disponível: </label>
+                        <input type="number"id="qtde" name="qtde">
+                    </div>
+
+                    <div class="form-add">            
+                        <button type="submit">Adicionar</button>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+    <!----------------------FIM DA AREA PRINCIPAL-------------------------------->
+
+    <!--------------------INICIO DO RODAPE DO SITE------------------------------>
+    <div id="rodape">
+        <p><strong>Siga-nos nas redes sociais!</strong></p>
+        <div>
+            <img class="tamanho-imagem" src="https://image.flaticon.com/icons/png/512/25/25305.png"/>
+            <img class="tamanho-imagem" src="https://image.flaticon.com/icons/png/512/25/25425.png"/>
+            <img class="tamanho-imagem" src="https://image.flaticon.com/icons/png/512/8/8800.png"/>
+        </div>
+    </div>
+    <!----------------------FIM DO RODAPE DO SITE------------------------------->
+</body>
+</html>

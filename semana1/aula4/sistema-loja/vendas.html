@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>DM - Vendas</title>
+</head>
+<body>
+    <!------------------INICIO DO CABECALHO--------------------------->
+    <div id="cabecalho">
+        <div id="logo">
+            <h1>Dumont <span class="texto-branco">Merchan</span></h1>
+        </div>
+        <div id="menu">
+            <a href="index.html">Página Inicial</a>
+            <a href="ctrl-estoque.html">Controle de Estoque</a>
+            <a href="add-produto.html">Adicionar Produto</a>
+            <a href="funcionarios.html">Funcionários</a>
+            <a href="vendas.html">Vendas</a>
+            <a href="historico.html">Histórico Vendas</a>
+        </div>
+    </div>
+    <!---------------------FIM DO CABECALHO---------------------------->
+
+    <div id="principal">
+        <div id="principal-topo">
+            <h2 class="titulo-laranja">Vendas</h2>    
+        </div>        
+        <div id="principal-corpo">
+            <form action="#">
+                <fieldset>
+                    <legend>Dados da Venda</legend>
+                    <div>
+                        <label for="cliente">Nome do Cliente</label>
+                        <input type="text" name="cliente" id="cliente">
+                    </div>
+                    <div>
+                        <label for="produto">Produto</label>
+                        <select name="produto" id="produto">
+                            <option value="copo">Copo</option>
+                            <option value="prato">Prato</option>
+                            <option value="garfo">Garfo</option>
+                            <option value="faca">Faca</option>
+                            <option value="colher">Colher</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="qtde">Quantidade</label>
+                        <input type="number" name="qtde" id="qtde">
+                    </div>
+                    <div>
+                        <label for="pagamento">Forma de Pagamento</label>
+                        <input class="radio" type="radio" name="pagamento" value="cartao">Cartão <br>
+                        <input class="radio" type="radio" name="pagamento" value="dinheiro">Dinheiro
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+    <!--------------------INICIO DO RODAPE DO SITE------------------------------>
+    <div id="rodape">
+        <p><strong>Siga-nos nas redes sociais!</strong></p>
+        <div>
+            <img class="tamanho-imagem" src="https://image.flaticon.com/icons/png/512/25/25305.png"/>
+            <img class="tamanho-imagem" src="https://image.flaticon.com/icons/png/512/25/25425.png"/>
+            <img class="tamanho-imagem" src="https://image.flaticon.com/icons/png/512/8/8800.png"/>
+        </div>
+    </div>
+    <!----------------------FIM DO RODAPE DO SITE------------------------------->
+</body>
+</html>
