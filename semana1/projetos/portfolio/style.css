@@ -61,6 +61,15 @@ body{
     margin-right: 150px;
 }
 
+#principal-profissional{
+    border-right: 1px dotted #8A8C91;
+    float: left;
+    width: 49.4%;
+}
+#principal-habilidade{    
+    float: right;
+    width: 49.5%;
+}
 /*-------------------CONFIGURAÇÃO DO RODAPÉ-----------------------------*/
 #rodape{
     background-color:#185BD7 ;    
@@ -93,8 +102,17 @@ body{
     padding: 100px 0px 20px 100px;
     font-size:3.5em
 }
+.titulo{
+    text-align: center;
+    color: #8A8C91;
+    font-size: 3.5em;
+    padding: 10px;
+}
 .tamanho-paragrafo{
     font-size: 0.8em;
+}
+.tamanho-habilidade{ /*tamanho icones aba habilidades*/
+    width: 50px;
 }
 /*-----------------CORES-------------------------*/
 .cor-logo{
@@ -112,16 +130,27 @@ body{
 #rodape p{
     color: #fff;
 }
+#principal-profissional h2, #principal-habilidade h2 {
+    color: #185BD7;
+    padding-left: 10px;
+}
+#principal-profissional ul, #principal-habilidade ul{
+    padding: 10px 0px 10px 30px ;
+
+}
+table,th{
+    padding: 10px;
+}
 
 /*-----------------------------------CONFIGURAÇÃO DOS LINKS---------------------*/
-#cabecalho-menu > ul{
+#cabecalho-menu ul{
     list-style-type: none; /*remove o estilo da lista*/
     width: 400px;
 }
-#cabecalho-menu > ul li{
+#cabecalho-menu ul li{
     float: left;
 }
-#cabecalho-menu > ul #atual{
+#cabecalho-menu ul #atual{
     border-bottom: 2px solid #185BD7 ;
 }
 a{
