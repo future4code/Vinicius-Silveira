@@ -1,4 +1,4 @@
-/*----------CONFIGURAÇÃO INICIAL------------*/
+/*----------------------------------------CONFIGURAÇÃO INICIAL------------------------------*/
 *{
     margin: 0px;
     padding: 0px;
@@ -19,7 +19,7 @@ body{
     float: left; /*cria uma flutuação para a esquerda*/
     padding: 30px 0px 0px 200px; /*margem interna topo direita baixo esquerda*/        
 }
-/*-------ESTILIZAÇÃO DO MENU-----------*/
+/*-------------ESTILIZAÇÃO DO MENU-----------*/
 #cabecalho-menu{
     float: right;/*cria uma flutuação para a direita*/         
     padding-right: 400px;
@@ -50,25 +50,31 @@ body{
     text-align: center;
     line-height: 150px;/*centraliza o texto de acordo com o tamnho criado do link q foi 150px*/
 }
-
+/*----------CONFIGURA A DIV QUE RECEBE O LINK CURRICULO------*/
 #sobre-curriculo{
     float: left;
     margin-left: 150px;
     margin-bottom: 20px;
 }
+/*---------CONFIGURA A DIV QUE RECEBE O LINK PROJETOS---------*/
 #sobre-projetos{
     float: right;
     margin-right: 150px;
 }
-
+/*-----CONFIGURA DIV EXPERIENCIA PROFISSIONAL NA PAGINA CURRICULO---------*/
 #principal-profissional{
     border-right: 1px dotted #8A8C91;
     float: left;
     width: 49.4%;
 }
+/*-----CONFIGURA DIV HABILIDADES PROFISSIONAL NA PAGINA CURRICULO---------*/
 #principal-habilidade{    
     float: right;
     width: 49.5%;
+}
+/*-----CONFIGURA DIV CONTATO NA PAGINA CONTATO---------*/
+#contato-msg{
+    margin-left: 190px;
 }
 /*-------------------CONFIGURAÇÃO DO RODAPÉ-----------------------------*/
 #rodape{
@@ -114,6 +120,17 @@ body{
 .tamanho-habilidade{ /*tamanho icones aba habilidades*/
     width: 50px;
 }
+.tamanho-titulo-h2{
+    color: #185BD7;
+    padding-left: 10px;
+}
+.tamanho-img-projeto{
+    width: 300px;
+    padding: 10px;
+}
+.format-projetos{
+    margin-left: 190px;
+}
 /*-----------------CORES-------------------------*/
 .cor-logo{
     color: #A9B3C7;
@@ -130,10 +147,7 @@ body{
 #rodape p{
     color: #fff;
 }
-#principal-profissional h2, #principal-habilidade h2 {
-    color: #185BD7;
-    padding-left: 10px;
-}
+
 #principal-profissional ul, #principal-habilidade ul{
     padding: 10px 0px 10px 30px ;
 
@@ -141,7 +155,37 @@ body{
 table,th{
     padding: 10px;
 }
-
+label{
+    display: block;
+    cursor: pointer;
+}
+input{
+    width: 250px;    
+}
+textarea{
+    width: 250px;
+    height: 200px;
+}
+form,fieldset{
+    padding: 10px;
+}
+fieldset{
+    width: 550px;
+}
+button{
+    color: #FFF;
+    background-color: #185BD7;
+    padding: 5px;
+    border-radius: 10%;
+    width: 80px;
+}
+button:active{
+    background-color: #2B72F6;    
+}
+button:hover{
+    cursor: pointer;
+    color: #A9B3C7;
+}
 /*-----------------------------------CONFIGURAÇÃO DOS LINKS---------------------*/
 #cabecalho-menu ul{
     list-style-type: none; /*remove o estilo da lista*/

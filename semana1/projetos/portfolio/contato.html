@@ -32,11 +32,38 @@
         <div id="principal">
             <h1 class="titulo">Contato</h1>
             <div id="contato-msg">
-                <h2>Entre em contato</h2>
+                <h2 class="tamanho-titulo-h2">Deixe sua mensagem</h2>
                 <form action="#">
-
-                </form>            
+                    <fieldset>
+                        <legend>Dados de contato</legend>
+                        <div>
+                            <label for="nome">Nome</label>
+                            <input type="text" name="nome" id="nome">
+                        </div>
+                        <div>
+                            <label for="email">E-mail</label>
+                            <input type="email" name="email" id="email">
+                        </div>
+                        <div>
+                            <label for="fone">Telefone</label>
+                            <input type="text" name="fone" id="fone">
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Comentários</legend>
+                        <div>
+                            <label for="msg">Mensagem</label>
+                            <textarea name="msg" id="msg"></textarea>
+                        </div>
+                        <div>
+                            <button>Enviar</button>
+                        </div>
+                    </fieldset>
+                </form>  
+            </div>          
+        </div>
         <!------------------FINAL DO CORPO DA PÁGINA----------------->
+
          <!---------------INICIO DO RODAPÉ DA PÁGINA------------------>
          <div id="rodape">                                                    
             <p><strong>Todos os direitos reservados</strong></p>
