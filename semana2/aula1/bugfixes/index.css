@@ -149,4 +149,13 @@ td button:hover{
 }
 #back-button:active, td button:active{
     color: white;
+    box-shadow: none;
+}
+
+/*------------EFEITO OPACIDADE NO ICONE DE LUPA-----------*/
+img.icone:hover{
+    opacity: 60%;
+}
+img.icone:active{
+    opacity: 100%;
 }
