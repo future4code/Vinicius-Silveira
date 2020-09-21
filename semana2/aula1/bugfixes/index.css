@@ -18,7 +18,7 @@ h2 {
 
 input {
     height: 20px;
-    width: 500px;
+    width: 350px;
 }
 
 /*button:focus {
@@ -60,6 +60,10 @@ img {
     width: 15px;
 }
 
+.borda-input{
+    border: none;
+    border-bottom: 2px solid black;
+}
 
 /** 
   *
