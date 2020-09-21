@@ -143,7 +143,10 @@ td button:hover{
     font-size: 10px;
     color: black;
 }
-
+#botao{
+    text-align: center;
+    padding-top: 50px;
+}
 #back-button:hover {
     background-color: #635a3d    
 }
