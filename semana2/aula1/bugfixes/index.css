@@ -29,9 +29,9 @@ img {
     width: 100px;
 }
 
-div>p:first-child {
+/*div>p:first-child {
     display: inline;
-}
+}*/
 
 div img {
     background: black;
@@ -76,7 +76,7 @@ div img {
 }
 
 #container-para-comprar {
-    background-color: #e7eb90;
+    background-color: #e7eb90;    
 }
 
 #container-para-comprar>p {
