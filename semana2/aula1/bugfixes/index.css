@@ -80,11 +80,12 @@ img {
     background-color: #2274a5;
     color: white;
     padding-top: 100px;
-    
+    height: 400px;
 }
 
-#container-de-descricao>ol {
-    padding: 15px 0px;
+#container-de-descricao ol {
+    padding: 15px 0px;       
+    list-style-position: inside;
 }
 
 #container-para-comprar {
