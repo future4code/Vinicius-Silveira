@@ -150,6 +150,7 @@ td button:hover{
 #back-button:active, td button:active{
     color: white;
     box-shadow: none;
+    outline: none;
 }
 
 /*------------EFEITO OPACIDADE NO ICONE DE LUPA-----------*/
@@ -158,4 +159,8 @@ img.icone:hover{
 }
 img.icone:active{
     opacity: 100%;
+}
+/*--------------Remove borda externa azulada----------------*/
+input:active{
+    outline: none;
 }
