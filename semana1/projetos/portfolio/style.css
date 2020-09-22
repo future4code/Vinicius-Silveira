@@ -1,0 +1,222 @@
+/*----------------------------------------CONFIGURAÇÃO INICIAL------------------------------*/
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;  
+    background:#EAEEF6;    
+}
+/*----------------------------CONFIGURAÇÃO DAS IDS-----------------------------------------*/
+/*-------- CONFIGURAÇÃO DO CABEÇALHO----------*/
+#cabecalho{
+    background-color: #fff;
+    text-align: center;    
+    height: 100px;    
+}
+/*-------ESTILIZAÇÃO DO LOGO(NOME)-----------*/
+#cabecalho-logo{
+    float: left; /*cria uma flutuação para a esquerda*/
+    padding: 30px 0px 0px 200px; /*margem interna topo direita baixo esquerda*/        
+}
+/*-------------ESTILIZAÇÃO DO MENU-----------*/
+#cabecalho-menu{
+    float: right;/*cria uma flutuação para a direita*/         
+    padding-right: 400px;
+    padding-top: 65px;
+}
+
+/*-----------CONFIGURAÇÃO DO CORPO-----------*/
+#principal{
+    background:#EAEEF6; 
+    height: 600px;
+}
+/*------CONFIGURAÇÃO DA DIV QUE CONTÉM FOTO DO AUTOR------*/
+#principal-img{    
+    float: left;
+    width: 40%; /*cria um tamanho de 40% da tag pai*/        
+    background:#EAEEF6;    
+}
+/*------CONFIGURAÇÃO DA DIV SOBRE AUTOR--------------*/
+#principal-sobre{    
+    background:#EAEEF6;    
+    float: right;
+    width: 59.9%;/*cria um tamanho de 59.7% da tag pai, usado valor quebrado pois estava quebrando a tela com valor exato*/
+}
+/*----CONFIGURA 2 DIVS QUE RECEBEM UM LINK REDONDO DENTRO DELA*/
+#sobre-curriculo, #sobre-projetos{    
+    width: 200px;
+    height: 200px;    
+    text-align: center;
+    line-height: 150px;/*centraliza o texto de acordo com o tamnho criado do link q foi 150px*/
+}
+/*----------CONFIGURA A DIV QUE RECEBE O LINK CURRICULO------*/
+#sobre-curriculo{
+    float: left;
+    margin-left: 150px;
+    margin-bottom: 20px;
+}
+/*---------CONFIGURA A DIV QUE RECEBE O LINK PROJETOS---------*/
+#sobre-projetos{
+    float: right;
+    margin-right: 150px;
+}
+/*-----CONFIGURA DIV EXPERIENCIA PROFISSIONAL NA PAGINA CURRICULO---------*/
+#principal-profissional{
+    border-right: 1px dotted #8A8C91;
+    float: left;
+    width: 49.4%;
+}
+/*-----CONFIGURA DIV HABILIDADES PROFISSIONAL NA PAGINA CURRICULO---------*/
+#principal-habilidade{    
+    float: right;
+    width: 49.5%;
+}
+/*-----CONFIGURA DIV CONTATO NA PAGINA CONTATO---------*/
+#contato-msg{
+    margin-left: 190px;
+}
+/*-------------------CONFIGURAÇÃO DO RODAPÉ-----------------------------*/
+#rodape{
+    background-color:#185BD7 ;    
+    text-align: center;
+    padding: 20px;
+}
+#rodape-icones{
+    padding: 10px;
+}
+/*----------LIMPA A FLUTUAÇÃO DAS DIVS------------*/
+#limpa-float{
+    clear: both;
+}
+
+/*----------------------------CONFIGURAÇÃO DAS CLASSES-------------------------------------*/
+.img-foto{
+    width: 400px;
+    height: 400px;
+    filter: grayscale(50%);
+    border-radius: 100%;    
+    margin: 50px 0px 50px 100px;
+}
+.tamanho-icone{
+    width: 20px;    
+    cursor: pointer;
+}
+
+.principal-titulo{
+    color: #8A8C91;
+    padding: 100px 0px 20px 100px;
+    font-size:3.5em
+}
+.titulo{
+    text-align: center;
+    color: #8A8C91;
+    font-size: 3.5em;
+    padding: 10px;
+}
+.tamanho-paragrafo{
+    font-size: 0.8em;
+}
+.tamanho-habilidade{ /*tamanho icones aba habilidades*/
+    width: 50px;
+}
+.tamanho-titulo-h2{
+    color: #185BD7;
+    padding-left: 10px;
+}
+.tamanho-img-projeto{
+    width: 300px;
+    padding: 10px;
+}
+.format-projetos{
+    margin-left: 190px;
+}
+/*-----------------CORES-------------------------*/
+.cor-logo{
+    color: #A9B3C7;
+}
+.cor-paragrafo{
+    color: #8A8C91;
+}
+
+/*---------------CONFIGURAÇÃO DE ELEMENTOS DIVERSOS----------------------------*/
+#principal-sobre p{
+    padding: 20px;
+    text-align: justify;
+}
+#rodape p{
+    color: #fff;
+}
+
+#principal-profissional ul, #principal-habilidade ul{
+    padding: 10px 0px 10px 30px ;
+
+}
+table,th{
+    padding: 10px;
+}
+label{
+    display: block;
+    cursor: pointer;
+}
+input{
+    width: 250px;    
+}
+textarea{
+    width: 250px;
+    height: 200px;
+}
+form,fieldset{
+    padding: 10px;
+}
+fieldset{
+    width: 550px;
+}
+button{
+    color: #FFF;
+    background-color: #185BD7;
+    padding: 5px;
+    border-radius: 10%;
+    width: 80px;
+}
+button:active{
+    background-color: #2B72F6;    
+}
+button:hover{
+    cursor: pointer;
+    color: #A9B3C7;
+}
+/*-----------------------------------CONFIGURAÇÃO DOS LINKS---------------------*/
+#cabecalho-menu ul{
+    list-style-type: none; /*remove o estilo da lista*/
+    width: 400px;
+}
+#cabecalho-menu ul li{
+    float: left;
+}
+#cabecalho-menu ul #atual{
+    border-bottom: 2px solid #185BD7 ;
+}
+a{
+    text-decoration: none;
+    padding: 10px;
+    margin-top: 30px;
+}
+a:visited, a:link{
+    color: #8A8C91;
+}
+a:hover{
+    color:#A9B3CE ;
+}
+#principal-sobre a{
+    display: block;    
+    border-radius: 100%;
+    background-color:#2B72F6;
+    color: #fff;
+    width: 150px;
+    height: 150px;    
+}
+#principal-sobre a:hover{
+    background-color:#023CA8;
+    transition: .6s;
+}
