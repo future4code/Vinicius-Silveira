@@ -56,7 +56,4 @@ align-content:flex-end;
 flex-direction:column-reverse;
 align-content:center;
 /*Level 24/24*/
-flex-direction:column-reverse;
-flex-wrap:wrap-reverse;
-align-content:space-between;
-justify-content:center;
+
