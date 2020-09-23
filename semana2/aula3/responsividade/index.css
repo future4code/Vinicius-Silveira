@@ -27,7 +27,7 @@ div {
     grid-area: 1/1/2/4; /*linha inicial coluna inicial linha final coluna*/
 }
 
-.blue-block {
+.blue-block1, .blue-block2 {
     background-color: blue;
     display: grid;
     justify-items: center;
@@ -35,7 +35,7 @@ div {
     
 }
 
-.yellow-block {
+.yellow-block1, .yellow-block2 {
     background-color: yellow;
     display: grid;
     justify-items: center;
@@ -87,10 +87,15 @@ div {
     .green-block2 {                
         grid-row-start: 5;        
         grid-column: 1/3;
+    }        
+    .blue-block1{        
+        grid-row-start: 2;
     }
-        
-    .blue-block{        
-        grid-column-start: 1;
+    .blue-block2{        
+        grid-row-start: 4;
+    }
+    .yellow-block2{
+        grid-row-start: 4;
     }
     .white-block1{        
         grid-row-start: 7;        
@@ -101,5 +106,41 @@ div {
     .white-block3{        
         grid-row-start: 8;        
         grid-column: 1/3;
+    }
+}
+
+@media screen and (max-width:399px){
+    #main-container{
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(12,1fr);
+        justify-content: flex-start;
+    }
+    .green-block1 {                 
+        grid-row-start: 4;                
+    }    
+    .green-block2 {                
+        grid-row-start: 7;                
+    }        
+    .blue-block1{        
+        grid-row-start: 2;
+    }
+    .blue-block2{        
+        grid-row-start: 5;
+    }
+    .yellow-block1{
+        grid-row-start: 3;                
+    }
+    .yellow-block2{
+        grid-row-start: 6;
+    }
+    .white-block1{        
+        grid-row-start: 10;        
+    }
+    .white-block2{        
+        grid-row-start: 11;        
+    }
+    .white-block3{        
+        grid-row-start: 12;        
+        
     }
 }
