@@ -9,30 +9,35 @@ body {
 #main-container{
     display: flex;    
     flex-direction: column;
+    text-align: center;   
 }
 #top-container{
     align-items: flex-start;    
     display: flex;        
+    line-height: 40px;    
 }
 #middle-container{
     display: flex;    
-    flex-direction: row;    
+    flex-direction: row;        
 }
+
 #vertical-middle-container{
     display: flex;
-    flex-direction: column;    
+    flex-direction: column;     
+    line-height: 75px;    
 }
 #content2{
-    width: 50vw;        
+    width: 50vw;       
+    line-height: 150px; 
 }
 #image,#blank,#extra{
     width: 25vw;
 }
 
 .green-background {
-    background-color: green;    
+    background-color: green;           
     width: 28vw;        
-    height: 40px;    
+    height: 40px;        
 }
 
 .yellow-background {
@@ -44,6 +49,7 @@ body {
 .pink-background {
     background-color: fuchsia;    
     height: 365px;
+    line-height: 365px;
 }
 
 .blue-background {
@@ -66,8 +72,6 @@ body {
     height: 40px;    
 }
 
-}
-
 .lightgreen-background {
     background-color: lightgreen;
     height: 75px;
@@ -76,4 +80,5 @@ body {
 .purple-background {
     background-color: purple;
     height: 40px;    
+    line-height: 40px;
 }
