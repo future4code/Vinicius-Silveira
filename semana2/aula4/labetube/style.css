@@ -11,19 +11,7 @@ header{
     width: 100vw;
     height: 15vh;        
 }
-article{
-    display: grid;    
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(3,1fr);
-    align-items: center;
-    column-gap: 5vw;
-    row-gap: 5vh;
-}
-section{
-    display: grid;
-    align-items: center;
-    align-self: center;
-}
+
 footer{
     width: 100vw;
     height: 15vh;
@@ -37,14 +25,24 @@ footer{
 input{        
     width: 15vw;
     height: 3vh;    
-    margin-right: 20px;
+    margin-right: 2vw;
 }
 h1{
-    margin-left: 20px;
+    margin-left: 2vw;
+}
+h2{
+    margin-left: 19vw;
 }
 img{
     width: 20vw;
     height: 30vh;
     display: grid;
     align-self: center;
+}
+video{
+    width: 90vw;
+    height: 70vh;
+    display: block;
+    margin: 0 auto;
+    padding: 1%;
 }
