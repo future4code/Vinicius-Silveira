@@ -49,7 +49,7 @@ h1{
     margin-left: 2vw;
 }
 h2{
-    margin-left: 19vw;
+    margin-left: 5%;
 }
 img{
     width: 20vw;
@@ -58,8 +58,8 @@ img{
     align-self: center;
 }
 video{
-    width: 90vw;
-    height: 70vh;
+    width: 90%;
+    height: 70%;
     display: block;
     margin: 0 auto;
     padding: 1%;
@@ -76,9 +76,12 @@ video{
         height: 30vh; 
     }
     input{        
-        width: 20vw;
-        
+        width: 20vw;        
     }
+    video{
+        width: 90%;
+        height: 70%;        
+    }    
 }
 @media screen and (max-width: 550px){
     
@@ -95,6 +98,10 @@ video{
         height: 30vh;
         
     }
+    video{
+        width: 90%;
+        height: 70%;        
+    }
 }
 @media screen and (max-width: 400px){
     
@@ -110,6 +117,10 @@ video{
     input{        
         width: 30vw;
         
+    }
+    video{
+        width: 90%;
+        height: 70%;        
     }
     h1{
         font-size: 1.2em;
