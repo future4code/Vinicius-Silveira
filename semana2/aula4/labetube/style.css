@@ -3,6 +3,27 @@
     padding: 0;
     
 }
+
+#index-article{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(3,1fr);
+    justify-items: center;
+    
+}
+.video-gallery{
+    display: grid;
+    grid-template-rows: 3fr 1fr;
+    border: 1px solid green;    
+    margin: 10px 0;    
+    justify-items: start;
+    align-items: center;
+}
+section.video-gallery  p{
+    display: grid;
+    
+}
+
 header{        
     display: flex;
     background-color: #ef843a;
