@@ -3,7 +3,6 @@
     padding: 0;
     
 }
-
 #index-article{
     display: grid;
     grid-template-columns: repeat(4,1fr);
@@ -23,7 +22,6 @@ section.video-gallery  p{
     display: grid;
     
 }
-
 header{        
     display: flex;
     background-color: #ef843a;
@@ -32,7 +30,6 @@ header{
     width: 100vw;
     height: 15vh;        
 }
-
 footer{
     width: 100vw;
     height: 15vh;
@@ -66,4 +63,58 @@ video{
     display: block;
     margin: 0 auto;
     padding: 1%;
+}
+
+@media screen and (max-width: 750px){
+    
+    #index-article{     
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: repeat(4,1fr);                
+    }
+    img{
+        width: 25vw;
+        height: 30vh; 
+    }
+    input{        
+        width: 20vw;
+        
+    }
+}
+@media screen and (max-width: 550px){
+    
+    #index-article{     
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: repeat(5,1fr);                
+    }
+    input{        
+        width: 25vw;
+        
+    }
+    img{
+        width: 40vw;
+        height: 30vh;
+        
+    }
+}
+@media screen and (max-width: 400px){
+    
+    #index-article{     
+        grid-template-columns: repeat(1,1fr);
+        grid-template-rows: repeat(9,1fr);                
+    }
+    img{
+        width: 70vw;
+        height: 30vh;
+        
+    }
+    input{        
+        width: 30vw;
+        
+    }
+    h1{
+        font-size: 1.2em;
+    }
+    h3{
+        font-size: 0.8em;
+    }
 }
