@@ -1,0 +1,48 @@
+/*-------------------CONFIGURAÇÃO GERAL DA PÁGINA-----------------*/
+* {
+  margin: 0;  
+  padding: 0;
+  width: 100vw;
+}
+/*---------------------CABEÇALHO EM FLEXBOX----------------------*/
+header{
+    display: flex;
+    width: 100vw;
+    align-items: center;
+    justify-content: space-between;
+    height: 15vh;
+    text-align: center;
+    margin-top: 5px;    
+}
+main{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+#logo img{
+    width: 20vw;
+    height: 35vh;
+    line-height: 30vh;
+}
+ul{
+    list-style-type: none;    
+    padding-top: 40px;
+}
+li{
+    display: inline;
+    padding: 0 30px;
+}
+a{
+    text-decoration: none;
+    font-size: 1.5em;
+    padding: 10px;    
+}
+a:visited, a:link{
+    color: #FF5C5C;
+}
+a:hover{        
+    transition: 0.3s;
+    background-color:#FF5C5C ;
+    color: white;
+    border-radius: 10%;
+}
