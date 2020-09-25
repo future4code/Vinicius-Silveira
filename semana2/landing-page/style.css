@@ -5,18 +5,16 @@
   width: 100%;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
-/*---------------------CABEÇALHO EM FLEXBOX----------------------*/
+/*---------------------CONFIGURAÇÃO CABEÇALHO----------------------*/
 header{
-    display: flex;    
-    align-items: center;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    align-items: center;        
     height: 15vh;
-    margin-top: 5px;    
-    text-align: center;    
+    margin-top: 5px;      
+    text-align: center;  
 }
-#logo{
-    width: 20vw;
-}
+
 #logo img{
     width: 20vw;
     height: 10vh;        
@@ -88,7 +86,7 @@ header{
 .secao-clientes-logo img{
     width: 50%;    
 }
-/*----------------------RODAPÉ EM FLEXBOX-----------------------*/
+/*----------------------RODAPÉ-----------------------*/
 footer{
     display: grid;
     grid-template-columns: 1fr;    
@@ -97,7 +95,7 @@ footer{
     align-items: center;
     background:linear-gradient(#C85C5C,#FA524C) ;
     width: 100vw;
-    height: 30vh;        
+    
 }
 /*-------------------CONFIGURAÇÃO RESTANTE RODAPÉ---------------*/
 .rodape-contato{
@@ -180,13 +178,14 @@ textarea{
 }
 
 /*-----------------------MENU DE NAVEGAÇÃO-----------------*/
+
 ul{
     list-style-type: none;    
     padding-top: 30px;
 }
 li{
     display: inline;
-    padding: 20px;    
+    padding: 10px;    
 }
 /*------------------CONFIGURAÇÃO LINKS-------------------*/
 a{
@@ -204,3 +203,9 @@ a:hover{
     border-radius: 10%;
 }
 
+@media screen and (max-width:804px){
+
+}
+@media screen and (max-with:375px){
+    
+}
