@@ -23,8 +23,37 @@ Exercício 2
 
 /*---------Escritas de código
 Exercício 1
-*/
+
 let idade = prompt("Qual sua idade ? ")
 let idadeAmigo = prompt("Qual a idade do seu melhor amigo ? ")
 console.log(`Sua idade é maior que a do seu amigo ? ${Number(idade)>Number(idadeAmigo)}`)
 console.log(`Diferença da sua idade para seu amigo é de : ${Number(idade)-Number(idadeAmigo)}`)
+//--------------------------------------------------------
+
+
+Exercício 2
+
+let numPar = Number(prompt("Insira um número PAR: "))
+console.log(`Resto da divisão por 2 = ${numPar%2}`)
+// O padrão é que todo resto de número par por 2 é sempre 0
+// Todo número ímpar dividido por 2 o resto é 1
+//----------------------------------------------------------
+
+
+Exercício 3
+
+let listaDeTarefas=[]
+listaDeTarefas.push(prompt("1ª Tarefa a realizar no dia ?"))
+listaDeTarefas.push(prompt("2ª Tarefa a realizar no dia ?"))
+listaDeTarefas.push(prompt("3ª Tarefa a realizar no dia ?"))
+console.log(`Suas 3 tarefas no dia são : ${listaDeTarefas}`)
+let opcao = Number(prompt("Digite o índice da tarefa que já realizou[0 1 2]: "))
+listaDeTarefas.splice(opcao,1)
+console.log(`Sua nova lista: ${listaDeTarefas}`)
+//----------------------------------------------------------
+*/
+//Exercício 4
+
+let nome=prompt("Digite seu nome: ")
+let email=prompt("Digite seu email: ")
+console.log(`O e-mail ${email} foi cadastrado com sucesso. Seja bem-vindo(a), ${nome} !`)
