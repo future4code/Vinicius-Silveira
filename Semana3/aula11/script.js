@@ -83,4 +83,121 @@ if (genero==='fantasia' && preco<15){
     console.log("Escolha outro filme :(")
 }
 -----------------------------------------------------------------------------------------
+
+---------------------DESAFIOS
+
+DESAFIO 1
+
+const genero = prompt("Digite o gênero de filme que você gosta: ")
+const preco = Number(prompt("Informe o preço do ingresso: R$"))
+if (genero==='fantasia' && preco<15){
+    const snack=prompt("Que snack vai comprar ? ")
+    console.log(`Bom filme\n... com ${snack}`)
+}else{
+    console.log("Escolha outro filme :(")
+}
+------------------------------------------------------------------------------------------
+
+DESAFIO 2
 */
+const nome=prompt("Digite seu nome completo: ")
+const tipo=prompt("Selecione o tipo de jogo: [IN]-Internacional [DO]-Doméstico").toUpperCase()
+let etapa=prompt("Selecione a etapa: [SF]-Semi-final [DT]-3º lugar [FI]-Final").toUpperCase()
+const categoria=Number(prompt("Selecione a categoria[1] [2] [3] [4]: "))
+const ingressos=Number(prompt("Quantos ingressos ?"))
+let valor
+const cotacao=4.1
+
+console.log("---Dados da compra---")
+console.log(`Nome do cliente: ${nome}`)
+
+switch (etapa){
+    case 'SF':
+        etapa="Semi-final"
+        switch (categoria){
+            case 1:
+                valor=1320
+                break;
+            case 2:
+                valor=880
+                break;
+            case 3:
+                valor=550
+                break;
+            case 4:
+                valor=220
+                break;
+            default:
+                valor=0
+                break;                
+            }            
+        break;
+    case 'DT':
+        etapa="Decisão do 3º lugar"
+        switch (categoria){
+            case 1:
+                valor=660
+                break;
+            case 2:
+                valor=440
+                break;
+            case 3:
+                valor=330
+                break;
+            case 4:
+                valor=170
+                break;
+            default:
+                valor=0
+                break;                
+            }
+        break;
+    case 'FI':
+        etapa="Final"
+        switch (categoria){
+            case 1:
+                valor=1980
+                break;
+            case 2:
+                valor=1320
+                break;
+            case 3:
+                valor=880
+                break;
+            case 4:
+                valor=330
+                break;
+            default:
+                valor=0
+                break;                
+            }
+        break;
+    default :
+        etapa="Etapa não selecionada!"
+        valor=0
+        break;
+}
+switch (tipo){
+    case 'DO':
+        console.log("Tipo de jogo: Nacional")
+        break;
+    case 'IN':
+        console.log("Tipo do jogo: Internacional")
+        valor=valor/cotacao
+        break;
+    default:
+        console.log("Tipo do jogo indeterminado")
+        break;
+}
+
+console.log(`Etapa do jogo: ${etapa}`)
+console.log(`Categoria: ${categoria}`)
+console.log(`Quantidade de Ingressos: ${ingressos}`)
+console.log("---Valores---")
+if(tipo==='IN'){
+    console.log(`Valor do ingresso: U$${valor}`)
+    console.log(`Valor total: U$${valor*ingressos}`)
+}else if(tipo==='DO'){
+    console.log(`Valor do ingresso: R$${valor}`)
+    console.log(`Valor total: R$${valor*ingressos}`)
+}
