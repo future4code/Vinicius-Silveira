@@ -26,4 +26,61 @@ b. Se o usuário digitar 10 vai aparecer a mensagem Esse número passou no teste
 
 c. Acontece um erro, pois a variável mensagem foi declarada no escopo do bloco if se tornando uma variável local.
 ------------------------------------------------------------------------------------------
+
+-----------------EXERCÍCIOS DE ESCRITA DE CÓDIGO
+
+EXERCICIO 4
+
+const idade = Number(prompt("Digite sua idade: "))
+
+if (idade>=18){
+    console.log("Você pode dirigir")
+}else{
+    console.log("Você não pode dirigir")
+}
+-------------------------------------------------------------------------------------------
+
+EXERCÍCIO 5
+
+const turno=prompt("Informe seu turno, M[Matutino]-V[Vespertino]-N[Noturno]").toUpperCase()
+if (turno==='M'){
+    console.log("Bom Dia!")
+}else if (turno==='V'){
+    console.log("Boa Tarde!")
+}else if (turno==='N'){
+    console.log('Boa Noite!')
+}else{
+    console.log('Turno não identificado!')
+}
+------------------------------------------------------------------------------------------
+
+EXERCÍCIO 6
+
+const turno=prompt("Informe seu turno, M[Matutino]-V[Vespertino]-N[Noturno]").toUpperCase()
+switch (turno){
+    case 'M':
+        console.log('Bom Dia!')
+        break;
+    case 'V':
+        console.log('Boa Tarde!')
+        break;
+    case 'N':
+        console.log('Boa Noite!')
+        break;
+    default:
+        console.log('Turno não identificado')
+        break;
+}
+------------------------------------------------------------------------------------------
+
+EXERCÍCIO 7
+
+const genero = prompt("Digite o gênero de filme que você gosta: ")
+const preco = Number(prompt("Informe o preço do ingresso: R$"))
+if (genero==='fantasia' && preco<15){
+    console.log("Bom filme!")
+}else{
+    console.log("Escolha outro filme :(")
+}
+-----------------------------------------------------------------------------------------
 */
