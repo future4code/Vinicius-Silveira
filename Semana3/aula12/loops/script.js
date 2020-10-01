@@ -67,4 +67,49 @@ console.log(`O maior número é ${maior} e o menor é ${menor}`)
 ----------------------------------------------------------------------------------------------
 
 DESAFIO 2
+
+console.log("Vamos Jogar !")
+const numero1=Number(prompt("Informe o número a ser adivinhado: "))
+let numero2=Number(prompt("Adivinhe o número que estou pensando: "))
+let tentativas=1
+while(numero1!==numero2){
+    tentativas++
+    if(numero2>numero1){        
+        console.log("Xiiiiii você falou um número maior")
+    }else{
+        console.log("Uhhhhhhhh, você chutou um número menor")
+    }
+    numero2=Number(prompt("Adivinhe o número que estou pensando: "))    
+}
+if (tentativas>5){
+    console.log("Aleluiaaaaa, você acertou !!!")
+}else{
+    console.log("Parabéns você foi rápido !")
+}
+console.log(`O número de tentativas foi: ${tentativas}`)
+-----------------------------------------------------------------------------------------------
+
+DESSAFIO 3
+
 */
+console.log("Vamos Jogar !")
+let numero2=Math.floor((Math.random()*100)+1)
+let numero1=Number(prompt("Informe o número a ser adivinhado: "))
+let tentativas=1
+while(numero1!==numero2){    
+    tentativas++
+    if(numero1>numero2){        
+        console.log("Xiiiiii você falou um número maior")
+    }else{
+        console.log("Uhhhhhhhh, você chutou um número menor")
+    }
+    numero1=Number(prompt("Adivinhe o número que estou pensando: "))    
+}
+if (tentativas>5){1
+    console.log("Aleluiaaaaa, você acertou !!!")
+}else{
+    console.log("Parabéns você foi rápido !")
+}
+console.log(`O número de tentativas foi: ${tentativas}`)
+/* foram feitas 2 alterações somente no código, a priimeira foi em gerar o número aleatório utilizando a função Math.floor(Math.random()*100), onde Math.floor tira o ponto flutuante do número e o .random gera o aleatório, multiplicando por 100 gera um valor até 100 e somamos +1 pois o intervalo desse valor é aberto [0,100) então para incluir o 100 é somado 1*/
+
