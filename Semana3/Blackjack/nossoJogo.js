@@ -9,7 +9,7 @@
  * 
  * 
  * 
- */
+*/ 
 const rodada=confirm("Deseja iniciar uma nova rodada ?")
 
 if (rodada){      
@@ -24,10 +24,9 @@ if (rodada){
    console.log("====COMPUTADOR====")
    console.log(`Cartas: ${computador[0].texto} ${computador[1].texto}`)
    console.log(`Pontuação: ${somaComputador}`)
-   // usei o <22 para evitar que alguém vença no estouro
-   if(somaJogador<22 && somaJogador>somaComputador){
+   if(somaJogador>somaComputador){
       console.log("Parabéns Usuário você foi o vencedor !!!")
-   }else if(somaComputador<22 && somaComputador>somaJogador){
+   }else if(somaComputador>somaJogador){
       console.log("Computador foi o vencedor !!!")
    }else{
       console.log("Temos um empate !!!")
