@@ -31,10 +31,9 @@ let imprimeDadosCompletos=(nome,idade,cidade,estudante) =>{
     }else{
         resposta=(`Eu sou ${nome}, tenho ${idade} anos, moro em ${cidade} e não sou estudante`)
     }
-    return resposta
+    return console.log(resposta)
 }
-const resultado = imprimeDadosCompletos("Goli",23,"Rua Guarapari 190",true)
-console.log(resultado)
+imprimeDadosCompletos("Goli",23,"Rua Guarapari 190",true)
 -----------------------------------------------------------------------------------------------
 
 EXERCÍCIO 5
@@ -190,3 +189,5 @@ let inverteNaUnha=(array)=>{
 }
 console.log(inverteNaUnha(numeros))
 */
+
+
