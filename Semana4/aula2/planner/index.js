@@ -1,8 +1,8 @@
 //const controleBotao = document.getElementById("btnCriarTarefa")
 const inputTarefa = document.getElementById("tarefa") //captura o input tarefa
-const optionValor = document.getElementById("dias-semana") //captura o select dias-semana
 
 function aplicarTarefa(){
+    const optionValor = document.getElementById("dias-semana") //captura o select dias-semana
     if(inputTarefa.value==="" || inputTarefa.value===" "){
         alert("Impossível cadastrar tarefa vazia !")
         inputTarefa.value=""
@@ -39,4 +39,8 @@ function aplicarTarefa(){
         }
         inputTarefa.value=""
     }    
+}
+
+function riscaTarefa(){
+
 }
