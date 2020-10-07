@@ -44,3 +44,8 @@ function aplicarTarefa(){
 function riscaTarefa(){
 
 }
+function limpaTarefa(){
+    const limpar = document.getElementById("ulDomingo")
+    limpar.innerHTML=""
+
+}
