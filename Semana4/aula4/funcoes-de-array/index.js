@@ -80,11 +80,8 @@ function filtrarDespesas(){
 
 
     let despesasFiltradas = arrDespesas.filter((dados,indice,array)=>{
-        if(tipoFiltro==='alimentação'){
-            console.log("entrou no if")
-            console.log(despesasFiltradas)
-            return true
-            
+        if(dados.tipo===tipoFiltro && (dados.valor >=valorMin && dados.valor <=valorMax)){                                    
+            return true            
         }
         return false
     }) // AQUI NESSA VARIÁVEL VEM A IMPLEMENTAÇÃO
