@@ -20,7 +20,15 @@
  * É mandado imprimir no console cada variável sendo que para novoMontante o valor retornado é 
  * de 165 e na segunda é retornado o alert com a mensagem "TIPO DE INVESTIMENTO INFORMADO 
  * INCORRETO!"
+ * --------------------------------------------------------------------------------------------
+ * 
+ * EXERCÍCIO 3
+ * Nesse exercício são criadas 3 variáveis que recebem arrays, a variável numeros recebe um
+ * array com vários números e array1 e array2 recebem arrays em branco.
+ * No loop for é verificado cada elemento do array numeros e na condicional If é verificado
+ * se o elemento é par ou ímpar, se for par é adicionado com o push o elemento no array1, caso
+ * contrário, ele for ímpar, é adicionado no array2.
+ * No final é mostrada uma mensagem "Quantidade total de números" com a quantidade de elementos
+ * no array numeros e abaixo são mostradas a quantidade de números pares e ímpares que estão
+ * dentro dos arrays indicados
  */
-
-
- 
