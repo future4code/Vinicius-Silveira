@@ -80,7 +80,7 @@ function filtrarDespesas(){
 
 
     let despesasFiltradas = arrDespesas.filter((dados,indice,array)=>{
-        if(dados.tipo===tipoFiltro && (dados.valor >=valorMin && dados.valor <=valorMax)){                                    
+        if((dados.tipo===tipoFiltro || tipoFiltro==='todos') && (dados.valor >=valorMin && dados.valor <=valorMax)){                                    
             return true            
         }
         return false
