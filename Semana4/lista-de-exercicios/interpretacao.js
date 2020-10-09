@@ -31,4 +31,12 @@
  * No final é mostrada uma mensagem "Quantidade total de números" com a quantidade de elementos
  * no array numeros e abaixo são mostradas a quantidade de números pares e ímpares que estão
  * dentro dos arrays indicados
+ * --------------------------------------------------------------------------------------------
+ * 
+ * EXERCÍCIO 4
+ * Nesse exercício são criadas 3 variáves que recebem, na primeira um array com vários números
+ * e nas variáveis numero1 um número infinito e na numero2 recebe 0.
+ * No loop é verificado elemento por elemento da variável numeros e verifica qual o menor valor
+ * dentro do array e depois verifica qual o maior valor maior que zero.
+ * No final são impressos no console o maior e menor.
  */
