@@ -26,4 +26,18 @@
  * --------------------------------------------------------------------------------------------
  * 
  * EXERCÍCIO 3
+ * O código proposto não funciona, pois não é adicionado nenhum valor na variável, então a 
+ * lógica do while não funciona.
+ * const quantidadeDeNumerosPares = Number(prompt("Digite um numero: "))
+ * let i=0
+ * while(i<quantidadeDeNumerosPares){
+ *      console.log(i*2)
+ *       i++
+ * }
+ * --------------------------------------------------------------------------------------------
+ * 
+ * EXERCÍCIO 4
  */
+
+
+
