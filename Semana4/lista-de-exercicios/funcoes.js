@@ -1,23 +1,35 @@
-/*const array = [23,45,10,20,50,90,77,88,93,4,75,78,91]
-let arrayMaior = []
-let arrayMenor = []
+/* --------------------FUNÇÕES
+
+EXERCÍCIO 1
+
+const array = [23,45,11,7,6,90,77,88,93,24,75,8,3,900]
 let maior = -Infinity
 let menor = Infinity
-const segundoMaiorMenor = (array)=>{
+let segundoMaior = -Infinity
+let segundoMenor = Infinity
+const segundoMaiorMenor = (array)=>{        
     for(let i=0;i<array.length;i++){
-        if (array[i]>maior){
-            arrayMaior.push(array[i])
-            maior=array[i]
-        }
-        if(array[i]<menor){
-            arrayMenor.push(array[i])
+        if (array[i]>maior){          
+            maior=array[i]                                    
+        }        
+        if(array[i]<menor){            
             menor=array[i]
         }
+        for(let i=0; i<array.length;i++){
+            if (array[i]> segundoMaior && array[i]<maior){
+                segundoMaior=array[i]
+            }    
+            if (array[i]< segundoMenor && array[i]>menor){
+                segundoMenor=array[i]
+            }            
+        }                
     }
     console.log(array)
     console.log(maior)
-    console.log(menor)
-    console.log(arrayMenor)
-    console.log(arrayMaior)
+    console.log(menor)    
+    console.log(segundoMaior)
+    console.log(segundoMenor)
 }
-segundoMaiorMenor(array)*/
+segundoMaiorMenor(array)
+-----------------------------------------------------------------------------------------------
+*/
