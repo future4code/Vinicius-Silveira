@@ -76,4 +76,36 @@ console.log(permissaoEntrar)
 console.log("===Não podem usar a montanha Russa===")
 console.log(naoEntra)
 -----------------------------------------------------------------------------------------------
+
+EXERCÍCIO 4
 */
+const consultas = [
+	{ nome: "João", genero: "masculino", cancelada: true, dataDaConsulta: "01/10/2019" },
+	{ nome: "Pedro", genero: "masculino", cancelada: false, dataDaConsulta: "02/10/2019" },
+	{ nome: "Paula", genero: "feminino", cancelada: true, dataDaConsulta: "03/11/2019" },
+	{ nome: "Márcia", genero: "feminino", cancelada: false, dataDaConsulta: "04/11/2019" }
+]
+
+let criaEmail = consultas.map((dados)=>{
+    if(dados.cancelada===true){
+        switch(dados.genero){
+            case "masculino":
+                return (`Olá, Sr. ${dados.nome}. Infelizmente, sua consulta marcada
+                para o dia ${dados.dataDaConsulta} foi cancelada. Se quiser, pode entrar em contato conosco para remarcá-la`)
+            case "feminino":
+                return (`Olá, Sra. ${dados.nome}. Infelizmente, sua consulta marcada
+                para o dia ${dados.dataDaConsulta} foi cancelada. Se quiser, pode entrar em contato conosco para remarcá-la`)
+        }
+    }else{
+        switch(dados.genero){
+            case "masculino":
+                return (`Olá, Sr.${dados.nome}. Estamos enviando esta mensagem para lembrá-lo  da sua consulta no dia ${dados.dataDaConsulta}. Por favor, acuse
+                o recebimento deste e-mail.`)
+            case "feminino":
+                return (`Olá, Sra.${dados.nome}. Estamos enviando esta mensagem para lembrá-la  da sua consulta no dia ${dados.dataDaConsulta}. Por favor, acuse
+                o recebimento deste e-mail.`)
+        }
+    }
+})
+
+console.log(criaEmail)
