@@ -21,6 +21,6 @@ let criaRetangulo = (lado1,lado2)=>{
     console.log(`Perímetro: ${retangulo.perimetro}cm`)
     console.log(`Área: ${retangulo.area}cm²`)
 }
-const ladoA=Number(prompt("Informe o lado A do retângulo em cm: "))
-const ladoB=Number(prompt("Informe o lado B do retângulo em cm: "))
+const ladoA=Number(prompt("Informe o lado A do Retângulo em cm: "))
+const ladoB=Number(prompt("Informe o lado B do Retângulo em cm: "))
 criaRetangulo(ladoA,ladoB)
