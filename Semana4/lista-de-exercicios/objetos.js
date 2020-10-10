@@ -27,7 +27,7 @@ criaRetangulo(ladoA,ladoB)
 -----------------------------------------------------------------------------------------------
 
 EXERCÍCIO 3
-*/
+
 let filme={
     nome: "O resgate do soldado Ryan",
     ano: 1998,
@@ -35,3 +35,22 @@ let filme={
     atores:["Tom Hanks","Tom Sizemore","Matt Damon","Edward Burns","Barry Pepper","Vin Diesel"]
 }
 console.log(`Venha assistir ao vencedor de 5 Óscars, ${filme.nome}, de ${filme.ano}, dirigido pelo aclamado e vencedor de melhor diretor ${filme.direcao} e estrelado por ${filme.atores}.`)
+-----------------------------------------------------------------------------------------------
+
+EXERCÍCIO 4
+*/
+let pessoa = {
+    nome:"Vinicius",
+    idade: 36,
+    email:"vinicius_jag@hotmail.com",
+    endereco:"JK 2200"
+}
+let anonimizarPessoa = (arrayEditar)=>{
+    let pessoaAnonima = {
+        ...arrayEditar,
+        nome:"ANONIMO"
+    }
+    console.log(pessoaAnonima)
+}
+console.log(pessoa)//mostra o objeto original
+anonimizarPessoa(pessoa)//chama a função
