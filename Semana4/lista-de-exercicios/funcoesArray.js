@@ -1,7 +1,8 @@
 /**----------------------------FUNÇÕES DE ARRAY
  * EXERCÍCIO 1
  * 
- 
+ */
+
 let pessoas=[
     {nome:'Pedro',idade:20},
     {nome:'Paulo',idade:10},
@@ -15,5 +16,12 @@ let retornaAdultos = pessoas.filter((dados)=>{
     }
     return false
 })
-console.log(retornaAdultos)
-*/
+let retornaMenores = pessoas.filter((dados)=>{
+    if(dados.idade<20){
+        return true
+    }
+    return false
+})
+
+console.log("Adultos: ",retornaAdultos)
+console.log("Menores: ",retornaMenores)
