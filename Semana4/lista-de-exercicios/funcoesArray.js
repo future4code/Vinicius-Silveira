@@ -78,7 +78,7 @@ console.log(naoEntra)
 -----------------------------------------------------------------------------------------------
 
 EXERCÍCIO 4
-*/
+
 const consultas = [
 	{ nome: "João", genero: "masculino", cancelada: true, dataDaConsulta: "01/10/2019" },
 	{ nome: "Pedro", genero: "masculino", cancelada: false, dataDaConsulta: "02/10/2019" },
@@ -109,3 +109,38 @@ let criaEmail = consultas.map((dados)=>{
 })
 
 console.log(criaEmail)
+-----------------------------------------------------------------------------------------------
+
+EXERCÍCIO 5
+*/
+const contas = [
+	{ cliente: "João", saldoTotal: 1000, compras: [100, 200, 300] },
+	{ cliente: "Paula", saldoTotal: 7500, compras: [200, 1040] },
+	{ cliente: "Pedro", saldoTotal: 10000, compras: [5140, 6100, 100, 2000] },
+	{ cliente: "Luciano", saldoTotal: 100, compras: [100, 200, 1700] },
+	{ cliente: "Artur", saldoTotal: 1800, compras: [200, 300] },
+	{ cliente: "Soter", saldoTotal: 1200, compras: [] }
+]
+contas.forEach((dados,index)=>{
+    switch (index){
+        case 0:
+            dados.saldoTotal = 400
+            break;
+        case 1:
+            dados.saldoTotal =6260
+            break;
+        case 2:
+            dados.saldoTotal = -3340
+            break;
+        case 3:
+            dados.saldoTotal = -1900
+            break;
+        case 4:
+            dados.saldoTotal = 1300
+            break;
+        case 5: 
+            dados.saldoTotal =1200
+            break;
+    }
+})
+console.log(contas)
