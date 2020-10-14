@@ -8,6 +8,10 @@ import imgNcLogo from "./imagens/newcomputer.PNG";
 import imgCliper from "./imagens/cliper.PNG";
 import iconEmail from "./imagens/email.svg"
 import iconLocal from "./imagens/local.svg"
+import logoCatolica from "./imagens/catolica.png"
+import logoUfpel from "./imagens/ufpel.png"
+import logoLabenu from "./imagens/labenu.PNG"
+import Competencias from './components/Competencias/Competencias';
 
 function App() {
   return (
@@ -39,6 +43,28 @@ function App() {
       </div>
 
       <div className="page-section-container">
+        <h2>Formação Acadêmica</h2>
+        <CardGrande
+          imagem = {logoCatolica}
+          nome = "Universidade Católica de Pelotas"
+          descricao = "Tecnologia em Processamento de Dados - 2004"                  
+        />
+
+        <CardGrande
+          imagem={logoUfpel}
+          nome = "Universidade Federal de Pelotas"
+          descricao = "Engenharia Eletrônica - 2021"
+        />
+
+        <CardGrande
+          imagem={logoLabenu}
+          nome = "Labenu"
+          descricao = "Web developer Full Stack - 2021"
+        
+        />
+      </div>
+
+      <div className="page-section-container">
         <h2>Experiências profissionais</h2>
         <CardGrande 
           imagem={imgNcLogo}
@@ -49,7 +75,19 @@ function App() {
         <CardGrande 
           imagem={imgCliper}
           nome="Cliper" 
-          descricao="Atendimento, manutenção de computadores" 
+          descricao="Atendimento, manutenção de computadores"           
+        />
+      </div>
+      
+      <div className = "page-section-container">
+        <h2>Competências e Recomendações</h2>
+        <Competencias
+          nome1="Competência 1"                  
+          descricao1 = "Aqui vai a descrição sobre a competência citada"
+          nome2="Competência 2"                  
+          descricao2 = "Aqui vai a descrição sobre a competência citada"
+          nome3="Competência 3"                  
+          descricao3 = "Aqui vai a descrição sobre a competancia citadaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
         />
       </div>
 
