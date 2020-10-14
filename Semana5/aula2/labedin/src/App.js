@@ -2,6 +2,12 @@ import React from 'react';
 import './App.css';
 import CardGrande from './components/CardGrande/CardGrande';
 import ImagemButton from './components/ImagemButton/ImagemButton';
+import CardPequeno from "./components/CardPequeno/CardPequeno";
+import imgPessoal from "./imagens/pessoal.jpg";
+import imgNcLogo from "./imagens/newcomputer.PNG";
+import imgCliper from "./imagens/cliper.PNG";
+import iconEmail from "./imagens/email.svg"
+import iconLocal from "./imagens/local.svg"
 
 function App() {
   return (
@@ -9,29 +15,41 @@ function App() {
       <div className="page-section-container">
         <h2>Dados pessoais</h2>
         <CardGrande 
-          imagem="https://uploads-ssl.webflow.com/5d640f4558306be99cf47a0e/5dd57846babb597b77c6bb1d_PerfilFuture4_cor.png" 
-          nome="Astrodev" 
-          descricao="Oi, eu sou o Astrodev. Sou o chefe dos alunos da Labenu. Adoro pedir e-mails na sexta-feira e esperar os alunos responderem só para responder com uma bronca e dar mais trabalho para eles."
+          imagem={imgPessoal}
+          nome="Vinicius Silveira Moraes" 
+          descricao="Olá, sou o Vinícius, aluno da turma Dumont na Labenu, sou natural de Jaguarão Rio Grande do Sul, amante da música, cinema e esportes. Músico de chuveiro, desportista dos finais de semana e ruim de mira no CS, porém Global de Dust2."
         />
         
         <ImagemButton 
           imagem="https://image.flaticon.com/icons/png/512/117/117472.png" 
           texto="Ver mais"
         />
+
+        <CardPequeno        
+          imagem={iconEmail}
+          dado = "Email: "
+          texto="vinicius_jag@hotmail.com"        
+        />        
+
+        <CardPequeno        
+          imagem={iconLocal}
+          dado = "Endereço: "
+          texto="Av. JK de Oliveira 2200"        
+        />        
       </div>
 
       <div className="page-section-container">
         <h2>Experiências profissionais</h2>
         <CardGrande 
-          imagem="https://s3.amazonaws.com/future4.com.br/static/headf4-c492117ca2373dc85ca81bf715b3dc2a.png" 
-          nome="Labenu" 
-          descricao="Formando desenvolvedores para o mercado de trabalho!" 
+          imagem={imgNcLogo}
+          nome="Newcomputer" 
+          descricao="Atendimento ao público e manutenção de computadores." 
         />
         
         <CardGrande 
-          imagem="https://imagens.canaltech.com.br/empresas/4418.400.jpg" 
-          nome="NASA" 
-          descricao="Apontando defeitos." 
+          imagem={imgCliper}
+          nome="Cliper" 
+          descricao="Atendimento, manutenção de computadores" 
         />
       </div>
 
