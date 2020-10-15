@@ -3,12 +3,14 @@ import './Post.css'
 
 import {IconeComContador} from '../IconeComContador/IconeComContador'
 import {SecaoComentario} from '../SecaoComentario/SecaoComentario'
+import {SecaoCompartilhar} from '../SecaoCompartilhar/SecaoCompartilhar'
 
 import iconeCoracaoBranco from '../../img/favorite-white.svg'
 import iconeCoracaoPreto from '../../img/favorite.svg'
 import iconeComentario from '../../img/comment_icon.svg'
 import iconeMarcacaoBranco from '../../img/bookmark-white.svg'
 import iconeMarcacaoPreto from '../../img/bookmark.svg'
+import iconeCompartilhar from '../../img/share.svg'
 
 
 class Post extends React.Component {
@@ -17,7 +19,8 @@ class Post extends React.Component {
     numeroCurtidas: 0, // número de curtidas mostrada do lado do ícone
     comentando: false, // exibe o input e o botão de enviar o comentário
     numeroComentarios: 0, // quantidade de comentários enviados
-    marcando: false
+    marcando: false,
+    compartilhar:false
   }
 
   onClickCurtida = () => {    
@@ -31,11 +34,6 @@ class Post extends React.Component {
     }
   }
 
-  onClickMarcado = ()=>{
-    this.setState({
-      marcando: !this.state.marcando
-    })
-  }
   //essa função faz mostrar o input e o botão enviar alterando o valor da variável comentando
   onClickComentario = () => {
     this.setState({ 
@@ -51,13 +49,29 @@ class Post extends React.Component {
     
   }
 
+  onClickMarcado = ()=>{
+    this.setState({
+      marcando: !this.state.marcando
+    })
+  }
+
+  onClickCompartilhar = ()=>{
+    this.setState({
+      compartilhar: !this.state.compartilhar      
+    })    
+  }
+
   render() {
-    let iconeCurtida  
-    
+    let iconeCurtida      
     if(this.state.curtido) {
       iconeCurtida = iconeCoracaoPreto       
     } else {
       iconeCurtida = iconeCoracaoBranco          
+    }
+
+    let componenteComentario
+    if(this.state.comentando) {
+      componenteComentario = <SecaoComentario aoEnviar={this.aoEnviarComentario}/>
     }
 
     let iconeMarcacao
@@ -65,12 +79,11 @@ class Post extends React.Component {
       iconeMarcacao = iconeMarcacaoPreto
     }else{
       iconeMarcacao = iconeMarcacaoBranco
-    }
+    }    
 
-    let componenteComentario
-
-    if(this.state.comentando) {
-      componenteComentario = <SecaoComentario aoEnviar={this.aoEnviarComentario}/>
+    let componenteCompartilhar
+    if(this.state.compartilhar){
+      componenteCompartilhar = <SecaoCompartilhar/>
     }
 
     return <div className={'post-container'}>
@@ -87,6 +100,12 @@ class Post extends React.Component {
           onClickIcone={this.onClickCurtida}
           valorContador={this.state.numeroCurtidas}
         />
+        
+        <IconeComContador
+          icone={iconeComentario}
+          onClickIcone={this.onClickComentario}
+          valorContador={this.state.numeroComentarios}
+        />
 
         <IconeComContador
           icone={iconeMarcacao}
@@ -94,13 +113,13 @@ class Post extends React.Component {
         />
 
         <IconeComContador
-          icone={iconeComentario}
-          onClickIcone={this.onClickComentario}
-          valorContador={this.state.numeroComentarios}
+          icone={iconeCompartilhar}
+          onClickIcone={this.onClickCompartilhar}          
         />
-        
+
       </div>
-      {componenteComentario}              
+      {componenteComentario}       
+      {componenteCompartilhar}       
     </div>    
   }
 }

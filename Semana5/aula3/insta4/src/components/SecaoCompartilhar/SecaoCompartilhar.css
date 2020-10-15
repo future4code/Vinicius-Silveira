@@ -1,0 +1,23 @@
+.icone-compartilhar {
+    display: grid;
+    grid-template-rows:1fr 1fr;
+    grid-template-columns: 1fr;    
+    padding: 0px 10px;        
+}
+
+.img-compartilhar{
+    display: grid;
+    justify-items: center;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 5px 0;
+}
+.input-compartilhar{
+    display: grid;
+    grid-column:1/4 ;
+    margin: 5px 0 ;
+}
+.icone-compartilhar img {       
+    width: 20px;
+    height: 20px;
+}
