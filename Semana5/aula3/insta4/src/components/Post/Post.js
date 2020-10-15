@@ -7,6 +7,8 @@ import {SecaoComentario} from '../SecaoComentario/SecaoComentario'
 import iconeCoracaoBranco from '../../img/favorite-white.svg'
 import iconeCoracaoPreto from '../../img/favorite.svg'
 import iconeComentario from '../../img/comment_icon.svg'
+import iconeMarcacaoBranco from '../../img/bookmark-white.svg'
+import iconeMarcacaoPreto from '../../img/bookmark.svg'
 
 
 class Post extends React.Component {
@@ -14,7 +16,8 @@ class Post extends React.Component {
     curtido: false, // alterna entre o ícone preto e branco da curtida
     numeroCurtidas: 0, // número de curtidas mostrada do lado do ícone
     comentando: false, // exibe o input e o botão de enviar o comentário
-    numeroComentarios: 0 // quantidade de comentários enviados
+    numeroComentarios: 0, // quantidade de comentários enviados
+    marcando: false
   }
 
   onClickCurtida = () => {    
@@ -28,6 +31,11 @@ class Post extends React.Component {
     }
   }
 
+  onClickMarcado = ()=>{
+    this.setState({
+      marcando: !this.state.marcando
+    })
+  }
   //essa função faz mostrar o input e o botão enviar alterando o valor da variável comentando
   onClickComentario = () => {
     this.setState({ 
@@ -52,6 +60,13 @@ class Post extends React.Component {
       iconeCurtida = iconeCoracaoBranco          
     }
 
+    let iconeMarcacao
+    if(this.state.marcando){
+      iconeMarcacao = iconeMarcacaoPreto
+    }else{
+      iconeMarcacao = iconeMarcacaoBranco
+    }
+
     let componenteComentario
 
     if(this.state.comentando) {
@@ -74,10 +89,16 @@ class Post extends React.Component {
         />
 
         <IconeComContador
+          icone={iconeMarcacao}
+          onClickIcone={this.onClickMarcado}          
+        />
+
+        <IconeComContador
           icone={iconeComentario}
           onClickIcone={this.onClickComentario}
           valorContador={this.state.numeroComentarios}
         />
+        
       </div>
       {componenteComentario}              
     </div>    
