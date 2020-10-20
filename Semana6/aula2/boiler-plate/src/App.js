@@ -20,9 +20,19 @@ const InputsContainer = styled.div`
 
 class App extends React.Component {
     state = {
-      tarefas: [],
+      tarefas: [{
+        id: Date.now(), // Explicação abaixo
+        texto: 'Texto da primeira tarefa',
+        completa: false // Indica se a tarefa está completa (true ou false)
+      },
+      {
+        id: Date.now(), // Explicação abaixo
+        texto: 'Texto da segunda tarefa',
+        completa: false // Indica se a tarefa está completa (true ou false)
+      }
+    ],
       inputValue: '',
-      filtro: ''
+      filtro: 'pendentes'
     }
 
   componentDidUpdate() {
@@ -33,16 +43,35 @@ class App extends React.Component {
 
   };
 
+  //Input controlado
   onChangeInput = (event) => {
-
+    this.setState({inputValue:event.target.value})
   }
 
-  criaTarefa = () => {
-
+  criaTarefa = () => {    
+    const novaTarefa = 
+      {
+        id:Date.now(),
+        texto:this.state.inputValue ,
+        completa:false
+      }
+          
+    const copiaDoEstado = [...this.state.tarefas, novaTarefa]
+    this.setState({tarefas:copiaDoEstado})
+    console.log(this.state.tarefas) 
   }
 
   selectTarefa = (id) => {
-
+    const novaListaTarefa = this.state.tarefas.map((tarefa)=>{
+      if (id === tarefa.id){
+        const novaTarefa = {...tarefa,completa:!tarefa.completa}
+        return novaTarefa
+      }else{
+        return tarefa
+      }
+      
+    })
+    this.setState({tarefas:novaListaTarefa})
   }
 
   onChangeFilter = (event) => {
