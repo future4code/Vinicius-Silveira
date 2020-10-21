@@ -20,19 +20,20 @@ const InputsContainer = styled.div`
 
 class App extends React.Component {
     state = {
-      tarefas: [{
-        id: Date.now(), // Explicação abaixo
-        texto: 'Texto da primeira tarefa',
-        completa: false // Indica se a tarefa está completa (true ou false)
-      },
-      {
-        id: Date.now(), // Explicação abaixo
-        texto: 'Texto da segunda tarefa',
-        completa: false // Indica se a tarefa está completa (true ou false)
-      }
-    ],
+      tarefas: [
+        {
+          id: Date.now(),
+          texto: 'Texto da primeira tarefa',
+          completa: false // Indica se a tarefa está completa (true ou false)
+        },
+        {
+          id: Date.now()+1,
+          texto: 'Texto da segunda tarefa',
+          completa: false // Indica se a tarefa está completa (true ou false)
+        }
+      ],
       inputValue: '',
-      filtro: 'pendentes'
+      filtro: ''
     }
 
   componentDidUpdate() {
@@ -48,34 +49,33 @@ class App extends React.Component {
     this.setState({inputValue:event.target.value})
   }
 
-  criaTarefa = () => {    
+  criaTarefa = () => {        
     const novaTarefa = 
       {
         id:Date.now(),
-        texto:this.state.inputValue ,
+        texto:this.state.inputValue,
         completa:false
-      }
-          
+      }          
     const copiaDoEstado = [...this.state.tarefas, novaTarefa]
     this.setState({tarefas:copiaDoEstado})
-    console.log(this.state.tarefas) 
+     
   }
 
-  selectTarefa = (id) => {
+  selectTarefa = (id) => {    
     const novaListaTarefa = this.state.tarefas.map((tarefa)=>{
       if (id === tarefa.id){
-        const novaTarefa = {...tarefa,completa:!tarefa.completa}
+        const novaTarefa = {...tarefa,completa:!tarefa.completa}        
         return novaTarefa
       }else{
         return tarefa
       }
       
     })
-    this.setState({tarefas:novaListaTarefa})
+    this.setState({tarefas:novaListaTarefa})    
   }
 
   onChangeFilter = (event) => {
-
+    this.setState({filtro:event.target.value})        
   }
 
   render() {
@@ -114,7 +114,7 @@ class App extends React.Component {
                 completa={tarefa.completa}
                 onClick={() => this.selectTarefa(tarefa.id)}
               >
-                {tarefa.texto}
+                {tarefa.texto}                
               </Tarefa>
             )
           })}
