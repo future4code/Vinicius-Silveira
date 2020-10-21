@@ -37,12 +37,16 @@ class App extends React.Component {
     }
 
   componentDidUpdate() {
-
+    console.log('Atualizou')//verificando se está entrando no componente
+    localStorage.setItem("tarefas",JSON.stringify(this.state.tarefas))
   };
 
   componentDidMount() {
-
-  };
+    console.log('Montou') //verifica se está entrando no componente
+    if (localStorage.getItem("tarefas")) {
+      this.setState({tarefas: JSON.parse(localStorage.getItem("tarefas"))})
+    }      
+  }
 
   //Input controlado
   onChangeInput = (event) => {
