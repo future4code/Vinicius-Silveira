@@ -1,21 +1,28 @@
 import React from 'react'
 import axios from 'axios'
 
+const url = 'https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users'
+const headers ={
+    headers:{
+        Authorization:'vinicius-moraes-dumont'
+    }
+}
 class ListaUsuarios extends React.Component{
     state={
         usuarios:[],        
     }
-
+    // Monta o componente e chama a função para pegar os usuários
     componentDidMount = ()=>{
+        this.pegarUsuario();
+    }
+    // Ao atualizar o componente chama a função para pegar os usuários
+    componentDidUpdate = ()=>{
         this.pegarUsuario();
     }
 
     pegarUsuario = ()=>{    
-        axios.get('https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users',{
-          headers:{
-            Authorization:'vinicius-moraes-dumont'
-          }
-        }).then((resposta)=>{
+        axios.get(url,headers)         
+        .then((resposta)=>{
           this.setState({usuarios:resposta.data});
         }).catch((erro)=>{
           console.log(erro.message);
