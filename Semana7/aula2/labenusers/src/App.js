@@ -1,6 +1,17 @@
 import React from 'react'
 import Login from './components/Login/Login'
 import ListaUsuarios from './components/ListaUsuarios/ListaUsuarios'
+import styled from 'styled-components'
+import fundo from './img/fundo.jpg'
+
+const StyledDiv = styled.div`    
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  border: 1px solid white;  
+  background: url(${fundo});
+  width:900px;  
+  margin:0 auto;  
+`
+
 class App extends React.Component{
   state={
     telaCadastro:true,        
@@ -31,9 +42,9 @@ class App extends React.Component{
     }
 
     return(
-      <div>
+      <StyledDiv>        
         {trocaTela()}             
-      </div>
+      </StyledDiv>
     );
   }
 }

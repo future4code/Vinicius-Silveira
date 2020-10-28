@@ -1,6 +1,52 @@
 import React from 'react'
+import styled from 'styled-components'
 import axios from 'axios'
 
+const DivContainerFlex = styled.div`
+    display:flex;
+    flex-direction:column;
+    align-items:center;                
+    width:400px;    
+    margin: 100px auto;
+    background-color: rgba(255,255,255,0.3);    
+    border-radius:50px;   
+    h1{
+        color:white;        
+    } 
+`
+const DivUsuarios = styled.div `
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;    
+    width:300px;
+    button{
+        height:20px;
+        margin-top:15px;
+        border-radius:80px;
+        color:#fff;
+        background-color:rgba(255,51,0,0.3);
+        font-weight:bolder;
+    }
+    button:hover{
+        background-color:rgba(255,0,0,0.6);
+        cursor:pointer;
+    }
+`
+const DivButtonLista = styled.div `
+    display:flex;    
+    margin:10px;    
+    button{
+        color:#db7d00;
+        background-color:rgba(255,255,255,0.6);
+        border:2px solid #db7d00;
+        width: 10vw;
+        height:5vh;    
+    }
+    button:hover{
+        background-color:rgba(255,255,255,0.3);
+        cursor:pointer;
+    }
+`
 const url = 'https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users'
 const headers ={
     headers:{
@@ -44,20 +90,24 @@ class ListaUsuarios extends React.Component{
     render(){
         const atualizaLista = this.state.usuarios.map((dados)=>{
             return (
-                <p key={dados.id}> 
-                    {dados.name} 
-                    <button onClick={()=>{this.deletaUsuario(dados.id)}}>Deletar</button> 
-                </p>
+                <DivUsuarios key={dados.id}>
+                    <p> 
+                        {dados.name}                      
+                    </p>
+                    <button onClick={()=>{this.deletaUsuario(dados.id)}}>X</button>
+                </DivUsuarios>
             )
         })
 
         return(
-            <div>
-                <button onClick={this.props.onClickLogin}>Ir para página de cadastro</button>
-                <div>                    
+            <div>                
+                <DivContainerFlex>                    
                     <h1>Usuários Cadastrados</h1>                           
                     {atualizaLista}                      
-                </div>
+                </DivContainerFlex>
+                <DivButtonLista>
+                    <button onClick={this.props.onClickLogin}>Cadastro</button>
+                </DivButtonLista>
             </div>
         )
     }
