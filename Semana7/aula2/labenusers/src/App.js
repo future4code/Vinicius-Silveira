@@ -40,10 +40,10 @@ class App extends React.Component{
       headers:{
         Authorization:'vinicius-moraes-dumont'
       }
-    }).then((res)=>{
+    }).then(()=>{
       this.setState({inputUsuario:'',inputEmail:''})
       alert('Usuário criado com sucesso !')
-    }).catch((error)=>{
+    }).catch(()=>{
       alert('Erro - Verifique se os campos estão corretos !')
     })      
   }
