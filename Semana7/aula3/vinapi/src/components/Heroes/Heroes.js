@@ -5,13 +5,12 @@ import Fundo from '../../img/fundo.jpg'
 // api e private key fornecidas pela marvel, timestamp gerado de um valor de agora e hash
 // hash criada através de um md5 da (ts+privateKey+apiKey) na página js md5 demo
 const apiKey = '6847877bf6c28ecc30a02c612cbfdfb0'
-const privateKey = 'd5135dcbfff803b7c7861ea0e48fc9a644fcfc44'
 const timeStamp = '1565045589'
 const hash = '5615b2461f3a052ee6b6e3cd38e03204'
-const url = `https://gateway.marvel.com/v1/public/characters?ts=${timeStamp}&apikey=${apiKey}&hash=${hash}&limit=50`
 
 const DivHome = styled.div`      
-    background:#000;    
+    background:#000; 
+    height:100vh;   
 `
 const DivImgMarvel = styled.div`
     display:flex;    
@@ -30,27 +29,49 @@ const ImgHeroes = styled.img`
     height:300px;
     border:3px solid red;
     border-radius:10px;
-`
-const DivGridHeroes = styled.div`
     display:grid;
-    grid-template-columns:1fr 1fr;
-    grid-template-rows:1fr;            
-    justify-items:center;
 `
-const TextGridHeroes = styled.p`
+const DivFlexSelectHeroes = styled.div`
+    display:flex;    
+    align-items:center;
+    justify-content:center;    
+    margin-bottom:20px;    
+    height:20px;
+`
+const DivFlexHeroes = styled.div `
+    display:flex;    
+    justify-content:center;
+    background-color:#000;    
+`
+const DivFlexContent = styled.div`
+    display:flex;
+    flex-direction:column;    
+    padding-left:10px;
+`
+const TextFlexHeroes = styled.p`
     width:300px;
     color:#fff;
 `
 class Heroes extends React.Component {
+    
     state={
-        heroesList:[]         
+        heroesList:[],
+        imageUrl:'http://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784.jpg',
+        heroesDescription:'',
+        heroesName:'3-D Man',
+        offSetHeroes:'0',
+        filter:[]
     }
 
     componentDidMount = ()=>{
-        this.getMarvelHeroes();
+        this.getMarvelHeroes();   
+        this.montFilter();     
+    }    
+    componentDidUpdate = ()=>{
+        this.getMarvelHeroes()
     }
-
     getMarvelHeroes = ()=>{
+        const url = `https://gateway.marvel.com/v1/public/characters?ts=${timeStamp}&apikey=${apiKey}&hash=${hash}&limit=100&offset=${this.state.offSetHeroes}`
         axios.get(url)
         .then((response)=>{
             this.setState({heroesList:response.data.data.results})            
@@ -60,43 +81,64 @@ class Heroes extends React.Component {
         })
     }
 
-    /*onChangeSelectHeroes = (id)=>{         
-        console.log('ID: ',id)       
-        const urlId = `https://gateway.marvel.com/v1/public/characters/${id}?ts=${timeStamp}&apikey=${apiKey}&hash=${hash}&limit=6`        
+    onChangeSelectHeroes = (event)=>{                        
+        const urlId = `https://gateway.marvel.com/v1/public/characters/${event.target.value}?ts=${timeStamp}&apikey=${apiKey}&hash=${hash}&limit=100&offset=${this.state.offSetHeroes}`        
         axios.get(urlId)
-        .then ((response)=>{
-            const imgUrlHeroes = response.data.results.thumbnail.path
-            const imgExtensionHeroe = response.data.results.thumbnail.extension
-            this.setState({imageUrl:imgUrlHeroes+'.'+imgExtensionHeroe})
+        .then ((response)=>{            
+            const imgUrlHeroes = response.data.data.results[0].thumbnail.path
+            const imgExtensionHeroes = response.data.data.results[0].thumbnail.extension
+            this.setState({imageUrl:imgUrlHeroes+'.'+imgExtensionHeroes})
+            this.setState({heroesDescription:response.data.data.results[0].description})
+            this.setState({heroesName:response.data.data.results[0].name})            
         }).catch((error)=>{
-            console.log('erro: ',error.message)
+            console.log('erro: ',error.message);
         })
-    }*/
+    }
+    onChangeSelectHeroesFilter = (event)=>{
+        this.setState({offSetHeroes:event.target.value})               
+    }
+    
+    montFilter = ()=>{        
+        let filterOffsetArray=[]
+        for(let i=0; i<=14;i++){            
+            let filterOffset = 100*i            
+            filterOffsetArray.push({'id':i,'value':filterOffset})
+        }
+        this.setState({filter:filterOffsetArray})
+    }
 
-    render(){
-        console.log('Personagensss',this.state.heroesList)        
+    render(){        
         const renderHeroesList = this.state.heroesList.map((heroes)=>{            
-            return (               
-                    <div>
-                        <div>
-                            <ImgHeroes src={heroes.thumbnail.path+'.'+heroes.thumbnail.extension}/>
-                                <TextGridHeroes><strong>Name:</strong> {heroes.name}</TextGridHeroes>
-                                <TextGridHeroes><strong>Description:</strong> {heroes.description}</TextGridHeroes>
-                        </div>
-                    </div>                 
-                )                        
-        })
+            return <option key={heroes.id} value={heroes.id}>{heroes.name}</option>                    
+            
+        })      
+        const renderHeroesFilter = this.state.filter.map((filters)=>{
+            return <option key ={filters.id}value={filters.value}>{filters.value} - {filters.value+100}</option>
+        })                
         return(
             <DivHome>
                 <DivImgMarvel>
                     <ImgLogo src={Fundo} onClick={this.props.onClickSwitchScreen}/>
-                </DivImgMarvel>
-                <DivGridHeroes>                              
-                    {renderHeroesList}                            
-                </DivGridHeroes>                
+                </DivImgMarvel>                
+                <DivFlexSelectHeroes>
+                    <TextFlexHeroes><strong>Select Your Hero</strong></TextFlexHeroes>
+                    <select onChange={this.onChangeSelectHeroes}>                                  
+                        {renderHeroesList} 
+                    </select>   
+                    <TextFlexHeroes><strong>Filter</strong></TextFlexHeroes>
+                    <select onChange={this.onChangeSelectHeroesFilter}>                        
+                        {renderHeroesFilter}
+                    </select>                       
+                </DivFlexSelectHeroes>
+                <DivFlexHeroes>
+                <ImgHeroes src={this.state.imageUrl}/>
+                    <DivFlexContent>                        
+                        <TextFlexHeroes><strong>Name: </strong>{this.state.heroesName}</TextFlexHeroes>
+                        <TextFlexHeroes><strong>Description: </strong>{this.state.heroesDescription}</TextFlexHeroes>
+                    </DivFlexContent>
+                </DivFlexHeroes>
             </DivHome>
         )
     }
 }
-
 export default Heroes
