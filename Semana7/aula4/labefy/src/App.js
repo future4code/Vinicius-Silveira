@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import Principal from './components/Principal/Principal'
 import VisualizarPlaylist from './components/VisualizarPlayList/VisualizarPlayList'
 import CriarPlaylist from './components/CriarPlayList/CriarPlaylist'
-
+import DetalhePlaylist from './components/DetalhePlaylist/DetalhePlaylist'
 
 class App extends React.Component{
   state={
@@ -15,9 +15,7 @@ class App extends React.Component{
     this.setState({trocaComponente:!this.state.trocaComponente})    
   }
   
-  render(){
-    console.log('Estado',this.state.trocaComponente)
-    
+  render(){        
     const trocarComponente = ()=>{
       if(this.state.trocaComponente){
         return <VisualizarPlaylist
@@ -30,9 +28,8 @@ class App extends React.Component{
 
     return(
       <div>
-        <h1>APP</h1>
-        {trocarComponente()} 
-        <CriarPlaylist/>       
+        <h1>Labefy</h1>        
+        {trocarComponente()}                 
       </div>
     )
   }

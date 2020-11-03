@@ -5,8 +5,7 @@ import styled from 'styled-components'
 class Principal extends React.Component{
     render(){
         return(
-            <div>
-                Principal
+            <div>                
                 <button onClick={this.props.onClickPrincipal}>ABRIR O WEB PLAYER</button>
             </div>
         )    
