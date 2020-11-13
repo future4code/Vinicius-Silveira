@@ -26,7 +26,7 @@ export const DivContentProfile = styled.div`
 `
 export const BioProfile = styled.p `    
     position:absolute;    
-    width:25vw;
+    width:24vw;
     text-shadow: 0 0 10px black;
     margin-top:-10vh;
     margin-left:3vw;

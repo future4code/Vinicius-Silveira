@@ -5,6 +5,7 @@ import {IconMatchProfile,DivLikeDislike,DivRefreshMatches} from './Styled'
 import iconLike from '../../assets/icon-like.png'
 import iconDislike from '../../assets/icon-dislike.png'
 import iconRefresh from '../../assets/icon-refresh.png'
+
 const urlGet = 'https://us-central1-missao-newton.cloudfunctions.net/astroMatch/vinicius/person'
 const urlPost = 'https://us-central1-missao-newton.cloudfunctions.net/astroMatch/vinicius/choose-person'
 const urlPut = 'https://us-central1-missao-newton.cloudfunctions.net/astroMatch/vinicius/clear'
@@ -41,7 +42,7 @@ function Pretenders (){
     const putMatches = ()=>{
         axios.put(urlPut)
         .then(()=>{
-            alert('Matches limpados com sucesso !')
+            alert('Matches limpos com sucesso !')
         })
         .catch(()=>{
             alert('Erro ao limpar os macthes')
@@ -63,10 +64,7 @@ function Pretenders (){
     const onClickRefreshMatches = ()=>{
         putMatches()
     }
-    useEffect(()=>{
-        getProfileToChoose()
-    },[])
-    
+        
     useEffect(()=>{
         getProfileToChoose()
     },[renderComponent])
