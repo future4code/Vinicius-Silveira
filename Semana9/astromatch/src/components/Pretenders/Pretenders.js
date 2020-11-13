@@ -64,11 +64,11 @@ function Pretenders (){
     const onClickRefreshMatches = ()=>{
         putMatches()
     }
-        
+                
     useEffect(()=>{
         getProfileToChoose()
     },[renderComponent])
-        
+            
     return(    
         <DivContainer>    
             <div>                    
