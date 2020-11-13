@@ -63,25 +63,38 @@ function Pretenders (){
 
     const onClickRefreshMatches = ()=>{
         putMatches()
+        getProfileToChoose()
     }
-                
+                    
     useEffect(()=>{
         getProfileToChoose()
     },[renderComponent])
             
+    const showProfiles = ()=>{
+        if(profiles){
+            return(
+                <div>                    
+                    <AlignImgBio>
+                        <ImgProfile src={profiles.photo} alt='foto'/>                                
+                    </AlignImgBio>
+                    <DivContentProfile>
+                        <h2>{profiles.name} , </h2>    
+                        <h2>{profiles.age}</h2>                                                  
+                    </DivContentProfile>
+                    <BioProfile>{profiles.bio}</BioProfile>                  
+                </div>   
+            )
+        }else{
+            return(
+                <div>
+                    <h2>Parabéns você zerou o astromatch</h2>
+                </div>
+            )
+        }
+    }
     return(    
         <DivContainer>    
-            <div>                    
-                <AlignImgBio>
-                    <ImgProfile src={profiles.photo} alt='foto'/>                                
-                </AlignImgBio>
-                <DivContentProfile>
-                    <h2>{profiles.name} , </h2>    
-                    <h2>{profiles.age}</h2>                                                  
-                </DivContentProfile>
-                <BioProfile>{profiles.bio}</BioProfile>  
-                
-            </div>                    
+            {showProfiles()}                             
             <DivLikeDislike>                
                 <div>
                     <IconMatchProfile src={iconDislike} onClick={onClickDislike}/>
