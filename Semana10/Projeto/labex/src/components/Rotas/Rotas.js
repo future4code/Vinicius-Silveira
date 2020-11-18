@@ -10,10 +10,10 @@ import ListaViagens from '../../screens/ListaViagens/ListaViagens'
 import Login from '../../screens/Login/Login'
 
 function Rotas (){
-    return(
+    return(        
         <BrowserRouter>
             <Switch>
-                <Route exact path='/Home'>
+                <Route exact path='/'>                    
                     <HomePage/>
                 </Route>
                 <Route exact path='/Admin/CriarViagem'>
@@ -38,7 +38,7 @@ function Rotas (){
                     <Login/>
                 </Route>
             </Switch>
-        </BrowserRouter>
+        </BrowserRouter>        
     )
 }
 
