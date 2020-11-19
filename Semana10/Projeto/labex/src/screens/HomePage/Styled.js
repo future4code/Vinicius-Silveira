@@ -32,7 +32,7 @@ export const SubTitulo = styled.h1`
 `
 export const BotaoHome=styled.button`    
     border:2px solid white;
-    background:rgba(255,255,255,0.4);
+    background:rgb(255,255,255,0.1);
     margin:0 4vw;
     width:15vw;
     height:10vh;

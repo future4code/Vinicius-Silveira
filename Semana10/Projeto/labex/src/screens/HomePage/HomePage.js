@@ -25,8 +25,8 @@ function HomePage (){
                     <SubTitulo>Venha desbravar o universo conosco !</SubTitulo>
                 </div>
                 <div>
-                    <BotaoHome onClick={goToLogin}>Entrar</BotaoHome>
-                    <BotaoHome onClick={goToInscricao}>Agendar Viagem</BotaoHome>
+                    <BotaoHome onClick={goToLogin}>Administrador</BotaoHome>
+                    <BotaoHome onClick={goToInscricao}>Candidatar-se</BotaoHome>
                 </div>
             </Conteudo>
         </DivContainter>

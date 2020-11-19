@@ -1,5 +1,5 @@
 import React from 'react'
-import Rotas from './components/Rotas/Rotas'
+import Rotas from './Rotas/Rotas'
 
 function App(){
   return (

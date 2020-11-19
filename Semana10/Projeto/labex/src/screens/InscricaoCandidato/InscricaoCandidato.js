@@ -1,10 +1,10 @@
 import React from 'react'
 
-function FormularioIncricaoUsuario (){
+function InscricaoCandidato (){
     return(
         <div>
             Inscrição Viagem
         </div>
     )
 }
-export default FormularioIncricaoUsuario
+export default InscricaoCandidato

@@ -3,7 +3,7 @@ import React from 'react'
 function CriarViagem () {
     return (
         <div>
-            CriarViagem
+            <h1>Agende um novo destino</h1>
         </div>
     )
 }
