@@ -37,8 +37,8 @@ function ListaViagens (){
             getDetalhesViagens()  
     }
 
-    const detalheViagem = ()=>{
-        history.push(`/Admin/Home/ListaViagens/DetalhesViagem/${localStorage.getItem('token')}`)
+    const detalheViagem = (id)=>{
+        history.push(`/Admin/Home/ListaViagens/DetalhesViagem/${id}`)
     }
 
     useEffect (()=>{
@@ -56,7 +56,7 @@ function ListaViagens (){
                         <div key={viagens.id}>
                             <p>Viagem: {viagens.name}</p>
                             <p>Planeta: {viagens.planet}</p>
-                            <button onClick={detalheViagem}>Detalhes</button>
+                            <button onClick={()=>detalheViagem(viagens.id)}>Detalhes</button>
                             <button onClick={()=>deletaViagem(viagens.id)}>Deletar</button>
                         </div>
                     )
