@@ -31,7 +31,7 @@ function CriarLogar (){
         axios.post(url,body)
         .then((res)=>{
             localStorage.setItem('token',res.data.token)  
-            history.push('/Admin/Home')     
+            history.push('/Admin/Home')  
             console.log('Token',res.data.token)                 
         })
         .catch(()=>{

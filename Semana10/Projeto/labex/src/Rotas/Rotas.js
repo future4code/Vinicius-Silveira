@@ -19,7 +19,7 @@ function Rotas (){
                 <Route exact path='/Admin/Home/CriarViagem'>
                     <CriarViagem/>                    
                 </Route>
-                <Route exact path='/Admin/DetalhesViagem'>
+                <Route exact path='/Admin/Home/ListaViagens/DetalhesViagem/:idViagem'>
                     <DetalhesViagem/>
                 </Route>
                 <Route exact path='/Inscricao'>

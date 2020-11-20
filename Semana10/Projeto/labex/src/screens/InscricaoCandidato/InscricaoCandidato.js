@@ -3,6 +3,7 @@ import {useForm} from '../../hooks/useForm'
 import axios from 'axios'
 const urlViagens = 'https://us-central1-labenu-apis.cloudfunctions.net/labeX/vinicius-dumont/trips'
 const urlPaises = 'https://restcountries.eu/rest/v2/all'
+
 function InscricaoCandidato (){
     const { form, onChange, resetState} = useForm({
         nome:'',
@@ -22,8 +23,7 @@ function InscricaoCandidato (){
     }
 
     const handleSubmittion = (event) =>{
-        event.preventDefault();
-        console.log('Form: ',form)
+        event.preventDefault();        
 
         const body={
             name:form.nome,
@@ -31,8 +31,7 @@ function InscricaoCandidato (){
             applicationText:form.motivo,
             profession:form.profissao,
             country:form.pais
-        }
-        console.log('Body: ',body)
+        }        
         axios   
             .post(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/vinicius-dumont/trips/${form.viagem}/apply`,body)
             .then(()=>{

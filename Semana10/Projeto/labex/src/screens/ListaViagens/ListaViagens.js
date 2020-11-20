@@ -14,20 +14,37 @@ function ListaViagens (){
         localStorage.removeItem('token')        
         history.push('/')
     }
+
     const getDetalhesViagens = ()=>{
         axios.get(url)              
         .then((res) => {
             setViagem(res.data.trips)            
         })
-        .catch((err) => {
-            console.log(err);
+        .catch(() => {
+            alert('Viagens não encontradas');
         });        
     }
+
+    const deletaViagem = (id)=>{
+        axios
+            .delete(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/vinicius-dumont/trips/${id}`)
+            .then(()=>{
+                alert('Viagem deletada com sucesso !')
+            })
+            .catch(()=>{
+                alert('Não foi possível deletar a viagem')
+            })          
+            getDetalhesViagens()  
+    }
+
+    const detalheViagem = ()=>{
+        history.push(`/Admin/Home/ListaViagens/DetalhesViagem/${localStorage.getItem('token')}`)
+    }
+
     useEffect (()=>{
         getDetalhesViagens()            
-    },[])    
-    
-    console.log('Viagem: ',viagem)         
+    },[viagem])    
+              
     return(
         <div>            
             <div>
@@ -39,7 +56,8 @@ function ListaViagens (){
                         <div key={viagens.id}>
                             <p>Viagem: {viagens.name}</p>
                             <p>Planeta: {viagens.planet}</p>
-                            <button>Detalhes</button>
+                            <button onClick={detalheViagem}>Detalhes</button>
+                            <button onClick={()=>deletaViagem(viagens.id)}>Deletar</button>
                         </div>
                     )
                 })}         
