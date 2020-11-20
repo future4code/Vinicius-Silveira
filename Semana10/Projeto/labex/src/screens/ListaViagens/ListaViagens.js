@@ -17,8 +17,7 @@ function ListaViagens (){
     const getDetalhesViagens = ()=>{
         axios.get(url)              
         .then((res) => {
-            setViagem(res.data.trips)
-            console.log('Dados:' ,res.data.trips)
+            setViagem(res.data.trips)            
         })
         .catch((err) => {
             console.log(err);
