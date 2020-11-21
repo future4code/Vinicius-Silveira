@@ -1,8 +1,8 @@
 import React from 'react'
 import Logo from '../../assets/Logo2.png'
-import {DivContainter, LogoLabex,DivLogo,Conteudo,Titulo, BotaoHome,SubTitulo} from './Styled'
+import {DivContainter, LogoLabex,DivLogo,Conteudo,Titulo,SubTitulo} from './Styled'
 import {useHistory} from 'react-router-dom'
-
+import {BotaoHome} from '../../Botoes/Botoes'
 function HomePage (){    
     const history = useHistory()
 
