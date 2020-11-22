@@ -13,12 +13,12 @@ export const TituloBemVindo = styled.h1`
 `
 export const DivFormulario = styled.div`
     display:flex;
-    color:#000;
+    color:#fff;
     text-shadow:0 0 15px white;
     font-weight:bolder;
     width:50%;
     height:50vh;
-    background-image:linear-gradient(to right,rgba(255,255,255,0.7),rgba(0,0,0,0.3));    
+    background:rgba(0,0,0,0.3);    
     border:1px solid rgba(255,255,255,0.2);
     border-radius:5px;    
     margin:0 auto;

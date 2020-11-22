@@ -2,6 +2,10 @@ import React,{useState,useEffect} from 'react'
 import axios from 'axios'
 import {useProtectedPage} from '../../hooks/useProtectedPage'
 import {useHistory} from 'react-router-dom'
+import HeaderAdmin from '../../components/HeaderAdmin/HeaderAdmin'
+import {ContainerViagens,DetalheViagem,DivViagem,TituloDestino,DivBotoes} from './Styled'
+import {BotaoHome} from '../../Botoes/Botoes'
+
 const url = 'https://us-central1-labenu-apis.cloudfunctions.net/labeX/vinicius-dumont/trips'
 
 function ListaViagens (){    
@@ -46,24 +50,28 @@ function ListaViagens (){
     },[viagem])    
               
     return(
-        <div>            
+        <ContainerViagens>       
+            <HeaderAdmin/>     
             <div>
                 <div>
-                    <h2>Destinos</h2>
-                </div>                                 
-                {viagem && viagem.map((viagens)=>{
-                    return(
-                        <div key={viagens.id}>
-                            <p>Viagem: {viagens.name}</p>
-                            <p>Planeta: {viagens.planet}</p>
-                            <button onClick={()=>detalheViagem(viagens.id)}>Detalhes</button>
-                            <button onClick={()=>deletaViagem(viagens.id)}>Deletar</button>
-                        </div>
-                    )
-                })}         
-                <button onClick={logOut}>Sair</button>                                         
+                    <TituloDestino>Destinos</TituloDestino>
+                </div>   
+                <DetalheViagem>                    
+                    {viagem && viagem.map((viagens)=>{
+                        return(
+                            <DivViagem key={viagens.id}>
+                                <h3>{viagens.name}</h3>
+                                <p>{viagens.description}</p>
+                                <DivBotoes>
+                                    <BotaoHome onClick={()=>detalheViagem(viagens.id)}>Detalhes</BotaoHome>
+                                    <BotaoHome onClick={()=>deletaViagem(viagens.id)}>Deletar</BotaoHome>
+                                </DivBotoes>                                
+                            </DivViagem>
+                        )
+                    })}                
+                </DetalheViagem>
             </div>
-        </div>
+        </ContainerViagens>
     )
 }
 export default ListaViagens

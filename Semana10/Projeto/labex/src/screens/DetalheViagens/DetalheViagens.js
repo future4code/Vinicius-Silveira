@@ -2,7 +2,10 @@ import React,{useState,useEffect} from 'react'
 import axios from 'axios'
 import {useProtectedPage} from '../../hooks/useProtectedPage'
 import {useParams} from 'react-router-dom'
-
+import HeaderAdmin  from '../../components/HeaderAdmin/HeaderAdmin'
+import { Astronautas, BotaoLike, ContainerDetalheViagem, DetalhesViagem, DivAstronautas, DivDadosViagem, DivViagem } from './Styled'
+import Like from '../../assets/like.png'
+import Dislike from '../../assets/dislike.png'
 const headers={
     headers:{
         auth:localStorage.getItem('token')
@@ -65,40 +68,53 @@ function DetalheViagens (){
     
     }
     return(
-        <div>   
+        <ContainerDetalheViagem>
+            <HeaderAdmin/>
             <div>
                 <h1>{viagem.name}</h1>
             </div>
-            <div>
-                <div>
+            <DivViagem>
+                <DivDadosViagem>
                     <div>
                         <h2>Detalhes da viagem</h2>
                     </div>
-                    <div>
+                    <DetalhesViagem>
                         <p>Planeta: {viagem.planet}</p>
                         <p>Duração: {viagem.durationInDays} dias</p>
                         <p>Data: {viagem.date}</p>
                         <p>Descrição: {viagem.description}</p>
-                    </div>
-                </div>
-                <div>
+                    </DetalhesViagem>
+                </DivDadosViagem>
+                <DivDadosViagem>
                     <div>
                         <h2>Astronautas</h2>
                     </div>
-                    {viagem.candidates && viagem.candidates.map((candidatos)=>{
-                    return(
-                        <div key={candidatos.id}>
-                            <p>Nome: {candidatos.name}</p>
-                            <p>Motivo: {candidatos.applicationText}</p>    
-                            <button onClick={()=>botaoLike(candidatos.id)}>Like</button>                        
-                            <button onClick={()=>{botaoDislike(candidatos.id)}}>Dislike</button>
-                        </div>
-                    )
-                })} 
-                </div>
-            </div>
+                    <DivAstronautas>                    
+                        {viagem.candidates && viagem.candidates.map((candidatos)=>{
+                            return(
+                                <Astronautas key={candidatos.id}>
+                                    <p>{candidatos.name}</p>
+                                    <p>{candidatos.applicationText}</p>    
+                                    <div>
+                                        <BotaoLike 
+                                            src={Like} 
+                                            onClick={()=>botaoLike(candidatos.id)}
+                                            title='Like'
+                                        />
+                                        <BotaoLike 
+                                            src={Dislike} 
+                                            onClick={()=>{botaoDislike(candidatos.id)}}
+                                            title='Dislike'    
+                                        />
+                                    </div>                                
+                                </Astronautas>
+                            )
+                        })} 
+                    </DivAstronautas>
+                </DivDadosViagem>
+            </DivViagem>
             
-        </div>
+        </ContainerDetalheViagem>
     )
 }
 

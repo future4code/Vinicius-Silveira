@@ -1,11 +1,13 @@
 import styled from 'styled-components'
 import usuario from '../../assets/usuario.png'
 import email from '../../assets/email.png'
+import Fundo from '../../assets/login.jpg'
 export const ContainerLogin = styled.div`
     background-color:#000;
     color:#fff;
     width:100vw;
     height:100vh;
+    background-image:url(${Fundo});
 `
 export const FormLogin =styled.div`
     margin:0 auto;
@@ -17,7 +19,7 @@ export const FormLogin =styled.div`
     font-weight:bolder;
     width:50%;
     height:50vh;
-    background:rgba(255,255,255,0.5);
+    background:rgba(0,0,0,0.5);
     border:1px solid rgba(255,255,255,0.2);
     border-radius:5px;     
     h2{
@@ -41,7 +43,7 @@ export const FormDados = styled.div`
     }
 `
 export const InputUsuario = styled.input`
-    background-image:url(${usuario});   
+    background-image:url(${usuario});      
 `
 export const InputSenha = styled.input `
     background-image:url(${email});

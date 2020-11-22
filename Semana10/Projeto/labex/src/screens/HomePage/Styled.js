@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import Fundo from '../../assets/fundo.jpg'
+import Fundo from '../../assets/fundoHome.jpg'
 
 export const DivContainter = styled.div`     
     @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');

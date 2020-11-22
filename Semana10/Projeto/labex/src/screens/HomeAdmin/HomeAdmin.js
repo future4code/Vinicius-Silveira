@@ -1,6 +1,9 @@
 import React from 'react'
 import {useProtectedPage} from '../../hooks/useProtectedPage'
 import {useHistory} from 'react-router-dom'
+import HeaderAdmin from '../../components/HeaderAdmin/HeaderAdmin'
+import {ContainerAdmin, DivBotoes, DivTextoBotao} from './Styled'
+import {BotaoHome} from '../../Botoes/Botoes'
 
 function HomeAdmin (){        
     const history=useHistory()
@@ -20,27 +23,25 @@ function HomeAdmin (){
         history.push('/Admin/Home/ListaViagens')
     }
     return(
-        <div>
+        <ContainerAdmin>
+            <HeaderAdmin/>
             <div>
                 <h1>Seja bem-vindo comandante</h1>
             </div>
-            <div>
+            <DivTextoBotao>
                 <div>
                     <h2>Administre aqui viagens futuras</h2>
                 </div>
-                <div>
-                    <button onClick={goToCriarViagem}>Criar</button>
-                </div>
-                <div>
-                    <button onClick={goToListaViagens}>Listar</button>
-                </div>               
-                <div>
-                    <button onClick={logOut}>Sair</button>
-                </div> 
-                
-                
-            </div>
-        </div>
+                <DivBotoes>
+                    <div>
+                        <BotaoHome onClick={goToCriarViagem}>Criar</BotaoHome>
+                    </div>
+                    <div>
+                        <BotaoHome onClick={goToListaViagens}>Listar</BotaoHome>
+                    </div>                                                               
+                </DivBotoes>                
+            </DivTextoBotao>
+        </ContainerAdmin>
     )
 }
 export default HomeAdmin
