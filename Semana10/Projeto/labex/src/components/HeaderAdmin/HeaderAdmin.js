@@ -10,7 +10,13 @@ function HeaderAdmin  (){
         localStorage.removeItem('token')
         history.push('/')
     }
-
+    const goToCriarViagem = ()=>{
+        history.push('/Admin/Home/CriarViagem')
+    }
+    
+    const goToListaViagens =()=>{
+        history.push('/Admin/Home/ListaViagens')
+    }
     return(
         <Container>
             <div>
@@ -18,8 +24,10 @@ function HeaderAdmin  (){
             </div>
             <DivTitulo>
                 <h2>O Futuro Começa Aqui</h2>
-            </DivTitulo>            
-            <DivSair>
+            </DivTitulo>                            
+            <DivSair>               
+                <p onClick={goToCriarViagem}>Criar viagens</p> 
+                <p onClick={goToListaViagens}>Listar viagens</p>
                 <p onClick={logOut}>Sair</p>               
             </DivSair>
         </Container>

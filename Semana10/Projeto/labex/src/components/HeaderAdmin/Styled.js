@@ -16,11 +16,15 @@ export const Container = styled.div`
 `
 export const DivTitulo = styled.div`
     display:flex;    
-    margin-right:20vw;    
 `
 export const DivSair = styled.div`    
     font-size:1.5em;
+    display:flex;    
+    align-items:center;
     cursor:pointer;    
+    p{
+        margin:0 10px;
+    }
     p:hover{        
         border-bottom:1px solid #fff;                
     }
