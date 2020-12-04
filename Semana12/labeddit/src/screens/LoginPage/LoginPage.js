@@ -44,6 +44,7 @@ function LoginPage (){
             })
         resetState()
     }
+    
     return(
         <ContainerLogin>
             <FormField onSubmit={autenticaEmail}>
