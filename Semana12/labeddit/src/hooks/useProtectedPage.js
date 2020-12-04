@@ -7,6 +7,7 @@ export function useProtectedPage(){
     useEffect(()=>{
         const token = localStorage.getItem('token')
         if (!token){
+            alert('Você precisa estar logado para acessar essa seção !')
             history.push('/')
         }
     },[history])    
