@@ -5,6 +5,8 @@ import {InputForms} from '../../components/Inputs/Inputs'
 import {FormField} from '../../components/Forms/Forms'
 import { ContainerFormPage } from './Styled'
 import { ButtonForm } from '../../components/Buttons/Buttons'
+import { useHistory } from 'react-router-dom'
+import {baseUrl} from '../../constants/baseUrl'
 
 function FormPage (){
     const{form,onChange,resetState}=useForm({
@@ -12,6 +14,8 @@ function FormPage (){
         newEmail:'',
         newPassword:''
     })
+    const history=useHistory()
+    
     const onChangeInput = (event)=>{
         const{name,value}=event.target
         onChange(name,value)
@@ -25,9 +29,11 @@ function FormPage (){
             password:form.newPassword
         }
         axios
-            .post(`https://us-central1-labenu-apis.cloudfunctions.net/labEddit/signup`,body)
-            .then(()=>{
+            .post(`${baseUrl}/signup`,body)
+            .then((res)=>{
                 alert('Usuário cadastrado com sucesso !')
+                localStorage.setItem('token',res.data.token)
+                history.push('/feedpage')
             })
             .catch(()=>{
                 alert('Dados inválidos !')

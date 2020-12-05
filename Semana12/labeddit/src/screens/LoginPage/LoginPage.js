@@ -6,6 +6,7 @@ import { ContainerLogin} from './Styled'
 import {InputForms} from '../../components/Inputs/Inputs'
 import {FormField} from '../../components/Forms/Forms'
 import { ButtonForm } from '../../components/Buttons/Buttons'
+import {baseUrl} from '../../constants/baseUrl'
 
 function LoginPage (){
     const {form,onChange,resetState}=useForm({
@@ -34,7 +35,7 @@ function LoginPage (){
             password:form.senha
         }        
         axios
-            .post(`https://us-central1-labenu-apis.cloudfunctions.net/labEddit/login`,body)
+            .post(`${baseUrl}/login`,body)
             .then((res)=>{
                 localStorage.setItem('token',res.data.token)
                 history.push('/feedpage')
@@ -44,7 +45,7 @@ function LoginPage (){
             })
         resetState()
     }
-    
+
     return(
         <ContainerLogin>
             <FormField onSubmit={autenticaEmail}>

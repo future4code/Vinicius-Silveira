@@ -6,5 +6,6 @@ export const ContainerFormPage = styled.div`
     text-align:center;
     h2{
         padding-top:1vh;
+        font-size:1.7vw;
     }
 `

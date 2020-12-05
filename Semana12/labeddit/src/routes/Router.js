@@ -4,7 +4,7 @@ import FeedPage from '../screens/FeedPage/FeedPage'
 import PostPage from '../screens/PostPage/PostPage'
 import HomePage from '../screens/HomePage/HomePage'
 
-function Router (){
+function Router (props){
     return(
         <BrowserRouter>
             <Switch>
@@ -14,7 +14,7 @@ function Router (){
                 <Route exact path='/feedpage'>
                     <FeedPage/>
                 </Route>                
-                <Route exact path='/feedpage/postpage'>
+                <Route exact path='/feedpage/postpage/:postId'>
                     <PostPage/>
                 </Route>
             </Switch>

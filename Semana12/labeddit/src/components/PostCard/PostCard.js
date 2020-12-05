@@ -1,18 +1,50 @@
 import React from 'react'
-import {useHistory} from 'react-router-dom'
-import axio from 'axios'
+import { ArrowIcon, Card, MessageIcon, PostAssignments, TitleUsername, VoteArrowCount } from './Styled'
+import up from '../../assets/arrow-up.png'
+import down from '../../assets/arrow-down.png'
+import Message from '../../assets/chat.png'
+import { useHistory } from 'react-router-dom'
 
 function PostCard (props){
-    const history=useHistory()
-    
+    const history = useHistory()
+
+    const goToPostPage = ()=>{
+        history.push(`/feedpage/postpage/${props.post.id}`)
+    }
+    const renderButtonMessage = ()=>{
+        if(!props.hideCommentButton){
+            return(
+                <div>
+                    <MessageIcon src={Message} alt='Chat' onClick={goToPostPage}/>
+                </div>   
+            )
+        }
+    }
+    const upVote = (direction)=>{
+        props.voteComment(props.post.id,1)
+    }
+    const downVote = (direction)=>{
+        props.voteComment(props.post.id,-1)
+    }
     return(
         <div>
-            <div>
-                <h1>{props.title}</h1>
-            </div>
-            <div>
-                <p>{props.text}</p>
-            </div>
+            <Card>            
+                <TitleUsername>
+                    <h3>{props.post.title}</h3>
+                    <p>{props.post.username}</p>
+                </TitleUsername>            
+                <div>
+                    <p>{props.post.text}</p>
+                </div>
+                <PostAssignments>
+                    <VoteArrowCount>                    
+                        <ArrowIcon src={up} onClick={upVote}/>                    
+                        <h3>{props.post.votesCount}</h3>                    
+                        <ArrowIcon src={down} onClick={downVote}/>
+                    </VoteArrowCount>
+                    {renderButtonMessage()}    
+                </PostAssignments>                
+            </Card>
         </div>     
     )
 }
