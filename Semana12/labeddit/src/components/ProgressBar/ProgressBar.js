@@ -1,4 +1,8 @@
 import styled from 'styled-components'
-export const ProgressBar = styled.progress`
-    margin:0 auto;
+
+export const ProgressBar = styled.progress`    
+    position:fixed; 
+    bottom:10px;
+    left:45vw;    
+    height:3vh;
 ` 
