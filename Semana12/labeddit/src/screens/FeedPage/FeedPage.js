@@ -5,8 +5,13 @@ import Header from '../../components/Header/Header'
 import axios from 'axios'
 import {baseUrl} from '../../constants/baseUrl'
 import {headers} from '../../constants/headers'
-import { ContainerCard } from './Styled'
+import { ContainerCard} from './Styled'
+import {ProgressBar} from '../../components/ProgressBar/ProgressBar'
 import { useForm } from '../../hooks/useForm'
+import { InputForms } from '../../components/Inputs/Inputs'
+import { Card } from '../../components/PostCard/Styled'
+import { FormField } from '../../components/Forms/Forms'
+import { ButtonForm } from '../../components/Buttons/Buttons'
 
 function FeedPage (){    
     const [posts,setPosts]=useState([])
@@ -67,30 +72,37 @@ function FeedPage (){
         resetState()
     }
     return(
-        <ContainerCard>
+        <div>
             <Header/>
-            {load && <progress/>}
-            <form onSubmit={submitPost}>
-                <input
-                    id='postTitle'
-                    name='postTitle'
-                    placeholder='Título do Post'
-                    value={form.postTitle}
-                    title='Informe um título'
-                    onChange={onChangeInput}
-                    required
-                />
-                <input
-                    id='postText'
-                    name='postText'
-                    placeholder='Texto do Post'
-                    value={form.postText}
-                    title='Informe o conteúdo do Post'
-                    onChange={onChangeInput}
-                    required
-                />
-                <button>Criar Post</button>
-            </form>
+            <ContainerCard>
+                <div>
+                    {load && <ProgressBar/>}
+                </div>
+                <Card>
+                    <FormField onSubmit={submitPost}>
+                        <InputForms
+                            id='postTitle'
+                            name='postTitle'
+                            placeholder='Título do Post'
+                            value={form.postTitle}
+                            title='Informe um título'
+                            onChange={onChangeInput}
+                            required
+                        />
+                        <InputForms
+                            id='postText'
+                            name='postText'
+                            placeholder='Texto do Post'
+                            value={form.postText}
+                            title='Informe o conteúdo do Post'
+                            onChange={onChangeInput}
+                            required
+                        />
+                        <ButtonForm>Criar Post</ButtonForm>
+                    </FormField>
+                </Card>                
+            </ContainerCard>
+            
             {posts && posts.map((post)=>{
                 return(
                     <PostCard
@@ -101,7 +113,7 @@ function FeedPage (){
                     />
                 )
             })}
-        </ContainerCard>
+        </div>
     )
 }
 export default FeedPage

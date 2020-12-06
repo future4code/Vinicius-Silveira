@@ -1,19 +1,23 @@
 import styled from 'styled-components'
 
-export const Card = styled.div`
-    border:1px solid red;
-    margin:10px auto;
+export const Card = styled.div`    
+    margin:10px auto;    
     background-color:#fff;
-    border-radius:5px;    
-    max-width:30vw;
+    border-radius:10px;    
+    max-width:30vw;    
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    p{
+        padding:5px;
+    } 
 `
 export const TitleUsername=styled.div`
-    h3{
-        border:1px solid red;
+    h3{        
         text-align:center;
+        padding:0 5px;
     }
     p{
-        border:1px solid red;
+        margin-top:-20px;
+        padding-left:10px;
     }
 `
 export const ArrowIcon=styled.img`

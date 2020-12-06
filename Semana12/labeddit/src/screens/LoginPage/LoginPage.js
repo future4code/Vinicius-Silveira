@@ -14,7 +14,6 @@ function LoginPage (){
         senha:''
     })
     const history = useHistory()    
-    localStorage.setItem('token','')
     const onChangeInput = (event)=>{
         const{name,value}=event.target
         onChange(name,value)
@@ -22,9 +21,9 @@ function LoginPage (){
     
     useEffect(()=>{
         const token = localStorage.getItem('token')
-        if (token){
-            alert('Você já está logado !')
+        if (token){            
             history.push('/feedpage')
+            alert('Você já está logado !')
         }        
     },[history])
 

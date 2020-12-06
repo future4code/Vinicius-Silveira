@@ -20,10 +20,10 @@ function PostCard (props){
             )
         }
     }
-    const upVote = (direction)=>{
+    const upVote = ()=>{
         props.voteComment(props.post.id,1)
     }
-    const downVote = (direction)=>{
+    const downVote = ()=>{
         props.voteComment(props.post.id,-1)
     }
     return(
@@ -31,7 +31,7 @@ function PostCard (props){
             <Card>            
                 <TitleUsername>
                     <h3>{props.post.title}</h3>
-                    <p>{props.post.username}</p>
+                    <p><em><strong>{props.post.username}</strong></em></p>
                 </TitleUsername>            
                 <div>
                     <p>{props.post.text}</p>
