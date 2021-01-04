@@ -1,0 +1,19 @@
+{
+  "name": "package-template",
+  "version": "1.0.0",
+  "description": "Primeira aula de backend",
+  "main": "index.js",
+  "scripts": {
+    "start": "echo \"Iniciando aplicação...\" && node ./index.js",
+    "test": "echo \"Error: no test specified\" ",
+    "bananinha": "echo bananinha",
+    "start2":"echo 'segundo comando start, chamando start...' && npm run start"
+  },
+  "keywords": [
+    "backend",
+    "node",
+    "packge.json"
+  ],
+  "author": "Vinicius Moraes",
+  "license": "ISC"
+}
