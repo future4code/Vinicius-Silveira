@@ -1,3 +1,3 @@
 const countries = require("./countries")
-console.log(countries)
+console.table(countries)
 console.log('Hello Dumont')

@@ -1,0 +1,21 @@
+{
+  "name": "aula40",
+  "version": "1.0.0",
+  "description": "Lista exercicios aula40",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\"",
+    "start": "clear && node ./exercicios/node-package/index.js",    
+    "exercicio1":"clear && node ./exercicios/node-package/exer1.js",
+    "exercicio2":"clear && node ./exercicios/node-package/exer2.js",
+    "exercicio3":"clear && node ./exercicios/node-package/exer3.js",
+    "exercicio4":"clear && node ./exercicios/node-package/exer4.js"
+
+  },
+  "keywords": [
+    "node",
+    "backend"
+  ],
+  "author": "vinicius-silveira-dumont",
+  "license": "ISC"
+}
