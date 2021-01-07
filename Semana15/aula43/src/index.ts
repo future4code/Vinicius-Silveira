@@ -8,6 +8,8 @@ const app = express()
 app.use(express.json())
 app.use(cors())
 
+let errorCode: number = 400
+
 type user = {
     id:number,
     name:string,
@@ -65,6 +67,31 @@ let users:user[]=[
     }
 ]
 
+//endpoint exercicio 3,
+
+app.get("/users",(req:Request,res:Response)=>{    
+
+    try{
+        const name: string=req.query.name as string
+        if(!name){
+            errorCode=422
+            throw new Error('Nome inválido ou campo vazio')
+        }
+        const myUser = users.filter((user=>
+            user.name.toUpperCase()===name.toUpperCase()
+        ))
+        if(!myUser){
+            errorCode=404
+            throw new Error('Nome não encontrado')
+        }
+        res.status(200).send(myUser)
+    }
+    catch(error){
+        res.status(errorCode).send(error.message)
+    }
+})
+
+
 //endpoint exercicio 1, pegar todos usuários
 // usamos o método get para buscar dados e a entidade usada foi /users/all
 app.get("/users/all",(req:Request,res:Response)=>{
@@ -74,8 +101,7 @@ app.get("/users/all",(req:Request,res:Response)=>{
 //endpoint exercicio 2,
 //a)usando path parameters
 //b)usando enum
-app.get("/users/:type",(req:Request,res:Response)=>{
-    let errorCode: number=400
+app.get("/users/:type",(req:Request,res:Response)=>{    
 
     try{
         const type: string=req.params.type as string
@@ -97,30 +123,122 @@ app.get("/users/:type",(req:Request,res:Response)=>{
     }
 })
 
-//endpoint exercicio 3,
-
-app.get("/users/:name",(req:Request,res:Response)=>{
-    let errorCode: number=400
+//endpoint 4
+//a) foi mudado para put, não mudou nada além do método
+//b) Não considero apropriado, pois no CRUD usamos o POST para criar e o PUT para editar
+app.post("/users",(req:Request,res:Response)=>{
 
     try{
-        const name: string=req.params.name as string
-        if(!name){
+        const newUser:user={
+            id:Date.now(),
+            name:req.body.name,
+            email:req.body.email,
+            type:req.body.type.toUpperCase(),
+            age:req.body.age
+        }
+
+        if(!req.body.name || !req.body.email || !req.body.type || !req.body.age){
             errorCode=422
-            throw new Error('Nome inválido ou campo vazio')
+            throw new Error('Preencha todos os campos corretamente')
         }
-        const myUser = users.filter((user=>
-            user.name.toUpperCase()===name.toUpperCase()
-        ))
-        if(!myUser){
-            errorCode=404
-            throw new Error('Nome não encontrado')
-        }
-        res.status(200).send(myUser)
+        users.push(newUser)
+        res.status(200).send({message:'Usuário criado com sucesso !'})        
     }
     catch(error){
         res.status(errorCode).send(error.message)
     }
 })
+
+//endpoint 5
+
+app.put("/users/:id",(req:Request,res:Response)=>{
+
+    try{
+        const updateUser:{id:number,name:string}={
+            id:Number(req.params.id),
+            name:req.body.name
+        }
+
+        if(isNaN(Number(updateUser.id))){
+            errorCode=422
+            throw new Error('Id Inválido')
+        }
+
+        const myUserIndex = users.findIndex((user=>
+            user.id===Number(updateUser.id)
+        ))
+        
+        if(myUserIndex === -1){
+            errorCode=404
+            throw new Error('Usuário não encontrado')
+        }
+        users[myUserIndex].name=updateUser.name
+        res.status(200).send({message:'Usuário alterado com sucesso !'})        
+    }
+    catch(error){
+        res.status(errorCode).send(error.message)
+    }
+})
+
+//endpoint 6
+app.patch("/users/:id",(req:Request,res:Response)=>{
+
+    try{
+        const updateUser:{id:number,name:string}={
+            id:Number(req.params.id),
+            name:req.body.name
+        }
+
+        if(isNaN(Number(updateUser.id))){
+            errorCode=422
+            throw new Error('Id Inválido')
+        }
+
+        const myUserIndex = users.findIndex((user=>
+            user.id===Number(updateUser.id)
+        ))
+        
+        if(myUserIndex === -1){
+            errorCode=404
+            throw new Error('Usuário não encontrado')
+        }
+        users[myUserIndex].name=updateUser.name
+        res.status(200).send({message:'Usuário alterado com sucesso !'})        
+    }
+    catch(error){
+        res.status(errorCode).send(error.message)
+    }
+})
+//endpoint 7
+//endpoint 6
+app.delete("/users/:id",(req:Request,res:Response)=>{
+
+    try{
+        const deleteUser:{id:number}={
+            id:Number(req.params.id),            
+        }
+
+        if(isNaN(Number(deleteUser.id))){
+            errorCode=422
+            throw new Error('Id Inválido')
+        }
+
+        const myUserIndex = users.findIndex((user=>
+            user.id===Number(deleteUser.id)
+        ))
+        
+        if(myUserIndex === -1){
+            errorCode=404
+            throw new Error('Usuário não encontrado')
+        }
+        users.splice(myUserIndex,1)
+        res.status(200).send({message:'Usuário deletado com sucesso !'})        
+    }
+    catch(error){
+        res.status(errorCode).send(error.message)
+    }
+})
+
 
 //Configuração do server local
 const server = app.listen(process.env.PORT || 3003, ()=>{
