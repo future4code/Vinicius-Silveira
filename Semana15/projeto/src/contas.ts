@@ -1,4 +1,4 @@
-export type Saldo = {
+export type pagamento = {
     valor:number,
     data:Date,
     descricao:string
@@ -10,5 +10,5 @@ export type Conta = {
     cpf:string,
     nascimento:Date,
     saldo:number,
-    extrato:Array<Saldo>   
+    extrato:Array<pagamento>   
 }
