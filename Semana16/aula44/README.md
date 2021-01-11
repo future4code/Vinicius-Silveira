@@ -1,4 +1,4 @@
-# Tabela de Atores
+# Banco de Dados de um Cinema
 
 Nesse projeto será criado um banco de dados contendo uma tabela com dados básicos sobre atores, seguindo uma lista de exercícios passada no notion da turma Dumont.
 
@@ -108,7 +108,7 @@ SELECT id,name,salary FROM Actor where salary<500000;
 e) O erro está na escrita da query, onde tenta-se passar o campo "nome" sendo que foi criado como "name".
 
 ```
-SELECT id, name from Actor WHERE id = "002"
+SELECT id, name from Actor WHERE id = "002";
 ```
 ### Exercício 4
 
@@ -118,4 +118,110 @@ SELECT * FROM Actor
 WHERE (name LIKE "A%" OR name LIKE "J%") AND salary > 300000
 ```
 
-b)
+b) Query que não comecem com a letra "A" e o salário maior que R$350.000.
+```
+SELECT * FROM Actor
+WHERE !(name LIKE "A%") AND salary > 350000;
+```
+
+c) Query com atores que possuam "G" ou "g" no nome.
+```
+SELECT * FROM Actor
+WHERE (name LIKE "%G%");
+```
+
+d) Query com atores que possuam "a" ou "A" ou "g" ou "G" no nome e salário entre R$350.000 e R$900.000
+```
+SELECT * FROM Actor
+WHERE (name LIKE "%G%" OR name LIKE "%A%") And (salary BETWEEN 350000 AND 900000);
+```
+
+### Exercício 5
+
+a) Criando tabela de filmes:
+```
+CREATE TABLE Filmes (
+	id VARCHAR(255) PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL,
+    sinopse TEXT NOT NULL,
+    data_lancamento DATE NOT NULL,
+    avaliacao TINYINT NOT NULL
+);
+```
+b) Adicionando Filmes:
+```
+INSERT INTO Filmes (id,nome,sinopse,data_lancamento,avaliacao)
+VALUES(
+	"001",
+    "Se eu Fosse Você",
+    "Cláudio e Helena são casados há muitos anos e enfrentam a rotina do casamento. Um dia eles são atingidos por um fenômeno inexplicável e trocam de corpos",
+    "2006-01-06",
+    7
+);
+```
+c) Adicionando Filmes:
+```
+INSERT INTO Filmes (id,nome,sinopse,data_lancamento,avaliacao)
+VALUES(
+	"002",
+    "Doce de mãe",
+    "Dona Picucha, uma animada senhora de 85 anos, sempre causa grandes confusões. A vida dela e dos seus quatro filhos sofre uma reviravolta depois que Zaida, empregada e amiga de Dona Picucha, anuncia que vai se casar e não poderá mais morar com ela",
+    "2012-12-27",
+    10
+);
+```
+d) Adicionando Filmes:
+```
+INSERT INTO Filmes (id,nome,sinopse,data_lancamento,avaliacao)
+VALUES(
+	"003",
+    "Dona Flor e Seus Dois Maridos",
+    "Dona Flor é uma sedutora professora de culinária casada com Vadinho, que só quer saber de farras e jogatina nas boates. A vida de abusos acaba por acarretar sua morte precoce.",
+    "2017-11-02",
+    8
+);
+```
+e) Adicionando Filmes:
+```
+INSERT INTO Filmes (id,nome,sinopse,data_lancamento,avaliacao)
+VALUES(
+	"004",
+    "Cidade de Deus",
+    "Buscapé (Alexandre Rodrigues) é um jovem pobre, negro e muito sensível, que cresce em um universo de muita violência. Buscapé vive na Cidade de Deus, favela carioca conhecida por ser um dos locais mais violentos da cidade. Amedrontado com a possibilidade de se tornar um bandido, Buscapé acaba sendo salvo de seu destino por causa de seu talento como fotógrafo, o qual permite que siga carreira na profissão. É através de seu olhar atrás da câmera que Buscapé analisa o dia-a-dia da favela onde vive, onde a violência aparenta ser infinita.",
+    "2002-08-30",
+    10
+);
+```
+
+### Exercício 6
+
+a) Retornar id,nome e avaliação a partir do id.
+```
+SELECT id,nome,avaliacao FROM Filmes WHERE id="001";
+```
+b) Retornar um filme a partir de um nome específico.
+```
+SELECT * FROM Filmes WHERE (nome LIKE "%dona%");
+```
+c) Retorne o id, título e sinopse dos filmes com a valiação mínima de 7.
+```
+SELECT id,nome,sinopse FROM Filmes WHERE (avaliacao>=7);
+```
+
+### Exercício 7
+a) Retornar um filme cujo título contenha a palvra "vida".
+```
+SELECT * FROM Filmes WHERE (nome LIKE "%vida%");
+```
+b) Pesquisa de um filme que contenha o texto no título ou sinopse.
+```
+SELECT * FROM Filmes WHERE (nome LIKE "%vida%" OR sinopse LIKE "%jovem%");
+```
+c) Todos filmes já lançados.
+```
+SELECT * FROM Filmes;
+```
+d) Pesquisa de um filme que contenha o texto no título ou sinopse e avaliação maior do que 7.
+```
+SELECT * FROM Filmes WHERE (nome LIKE "%vida%" OR sinopse LIKE "%dona%") AND (avaliacao > 7);
+```
