@@ -136,7 +136,54 @@ UPDATE Filmes
 SET playing_limit_date="2020-02-12"
 WHERE id="002";
 ```
-d) Deletar um filme e depois tentar atualizar esse mesmo id deletado e ver o erro.
+d) Após deletar um filme e tentar atualizar a sinopse da id deletada, o comando é executado, porém nada é alterado pois não encontrou nenhuma id com o valor passado.
+```
+DELETE FROM Filmes WHERE id="004";
+
+UPDATE Filmes
+SET sinopse="blá blá blá"
+WHERE id="004";
+```
+### Exercício 7
+a) Filmes com avaliação maior que 7.5.
+```
+SELECT COUNT(*) FROM Filmes WHERE avaliacao >7.5;
+```
+b) Média das avaliações dos filmes.
+```
+SELECT AVG(avaliacao) FROM Filmes;
+```
+c) Quantidade de filmes em cartaz.
+```
+SELECT COUNT(*) FROM Filmes WHERE playing_limit_date > CURDATE();
+```
+d) Quantidade de filmes que ainda irão lançar.
+```
+SELECT COUNT(*) FROM Filmes WHERE data_lancamento > CURDATE();
+```
+e) Maior nota dos filmes.
+```
+SELECT MAX(avaliacao) FROM Filmes;
+```
+f) Menor nota dos filmes.
+```
+SELECT MIN(avaliacao) FROM Filmes;
 ```
 
+### Exercício 8
+a) Todos os filmes em ordem alfabética.
+```
+SELECT * FROM Filmes ORDER BY nome ASC;
+```
+b) 5 primeiros filmes em ordem decresente.
+```
+SELECT * FROM Filmes ORDER BY nome DESC LIMIT 5.
+```
+c) 3 filmes mais recentes em cartaz.
+```
+SELECT * FROM Filmes WHERE (data_lancamento < CURDATE()) ORDER BY data_lancamento DESC LIMIT 3;
+```
+d) 3 filmes melhor avaliados.
+```
+SELECT * FROM Filmes ORDER BY avaliacao DESC LIMIT 3;
 ```
