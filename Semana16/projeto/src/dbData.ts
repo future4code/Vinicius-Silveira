@@ -1,4 +1,4 @@
-
+import express from "express"
 import {connection} from './dbConnection'
 
 export const createTable = async ():Promise<any> =>{
@@ -25,9 +25,8 @@ export const createUser = async(id:string,name:string,nickname:string,email:stri
 
 export const getAllUsers = async():Promise<any> =>{
     const result = await connection.raw(`
-        SELECT * FROM User
+        SHOW TABLES
     `)
     console.log(result[0])
-    return result[0]
-    
+    return result[0]    
 }
