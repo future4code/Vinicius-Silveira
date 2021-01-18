@@ -2,11 +2,10 @@ import express from "express"
 import cors from "cors"
 import {AddressInfo} from "net"
 
-export const connectToServer =() =>{
-    const app = express()
+const app = express()
     app.use(express())
     app.use(cors())
-
+export const connectToServer =() =>{    
     const server = app.listen(process.env.PORT || 3003, () =>{
         if(server){
             const address = server.address() as AddressInfo
