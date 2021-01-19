@@ -20,10 +20,6 @@ app.get("/user", async(req:Request, res:Response)=>{
     
 })
 
-app.get("/user/all", async(req:Request,res:Response)=>{
-   getAllUsers(req,res)
-})
-
 app.get("/user/order",async(req:Request,res:Response)=>{
     try{
         const orderType: string = req.query.orderType as string
