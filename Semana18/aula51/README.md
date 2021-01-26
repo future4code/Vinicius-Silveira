@@ -2,53 +2,31 @@
 
 ### Exercício 1
 
-a) Concordo que strings sejam melhores para armazenar ids que números, pois nos abre um leque de combinações possíveis, tornando o identificador único.
+a) O round ou cost é o custo numérico que está relacionado à segurança da senha, quanto maior, mais segura a senha, já o salt é uma string aleatória com 22 caracteres que é jogada na senha antes de criar o hash. Usei o valor 12, pois foi nos passado em aula que é o padrão para esse tipo de hash.
 
-b) Código no arquivo.
+b) Código no arquivo /middleware/hashManager
+
+c) Código no arquivo /middleware/hashManager
+
 
 ### Exercício 2
 
-a) O código cria a conexão com o banco de dados usando o knex, e cria uma função chamada createUser a qual nos permite criar um usuário com id, email e senha na tabela "User".
-
-b) Query usada para criar a tabela User, a qual chamei de aula50_User, pois já havia uma outra tabela User usada em outros exercícios e não tinha a necessidade de alterá-la.
-```sql
-CREATE TABLE aula50_User(
-	id VARCHAR(255) PRIMARY KEY,
-    email VARCHAR(100) UNIQUE NOT NULL,
-    password VARCHAR(100) NOT NULL
-);
-```
-c) código no arquivo.
-
-### Exercício 3
-
-a) Ele define como string o valor vindo do process.env.JWT_KEY.
-
-b) Código no arquivo authentication/authenticator
-
-### Exercício 4
-a) Código no arquivo /endpoints/signup
+a) Para implementar o código o primeiro arquivo a ser modificado será o signup, pois precisamos codificar primeiramente as senhas dos usuários cadastrados antes de tentar efetuar um login.
 
 b) Código no arquivo /endpoints/signup
 
-c) Código no arquivo /endpoints/signup
+c) Código no arquivo /endpoint/login
+
+### Exercício 3
+
+
+
+### Exercício 4
+
 
 ### Exercício 5
 
-a) Código no arquivo /data/getUserByEmail
+
 
 ### Exercício 6
 
-a) Código no arquivo /endpoints/login
-
-### Exercício 7 
-
-a) 
-
-b) Código no arquivo /middleware/authenticator
-
-### Exercício 8
-
-a) Código no arquivo /data/getUserById
-
-b) Código no arquivo /endpoints/selectUserById

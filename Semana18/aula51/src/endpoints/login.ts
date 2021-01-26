@@ -2,37 +2,36 @@ import { Request, Response} from "express"
 import { generateToken } from "../middleware/authenticator"
 import { getUserByEmail } from "../data/getUserByEmail"
 import { loginInput } from "../types/types"
+import { compare } from "../middleware/hashManager"
 
 let errorCode: number = 400
 
 export const login = async(req:Request,res:Response):Promise<void> =>{
 
     try{
-        const input: loginInput={
-            email: req.body.email,
-            password: req.body.password
-        }
-
-        if(!input.email || ! input.password){
+        const{email,password} = req.body as loginInput
+        
+        if(!email || !password){
             errorCode = 406
             throw new Error("Preencha o email e o password corretamente")
         }
         
-        if (!input.email.includes("@")){
+        if (!email.includes("@")){
             errorCode=406
             throw new Error("Email inválido, deve conter '@' no email")
         }
-        if(input.password.length<6){
+        if(password.length<6){
             errorCode=406
             throw new Error("Senha deve ser maior que 6 caracteres")
         }
-        const user = await getUserByEmail(input.email)      
-
+        const user = await getUserByEmail(email)
         if(!user){
             errorCode = 404
             throw new Error("Usuário não encontrado")
         }
-        if(user.password !== input.password){
+
+        const compareResult = await compare(password,user.password)        
+        if(!compareResult){
             errorCode = 401
             throw new Error("Senha inválida")
         }
