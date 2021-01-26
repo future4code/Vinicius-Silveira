@@ -18,3 +18,23 @@ CREATE TABLE aula50_User(
     password VARCHAR(100) NOT NULL
 );
 ```
+c) código no arquivo.
+
+### Exercício 3
+
+a) Ele define como string o valor vindo do process.env.JWT_KEY.
+
+b) Código no arquivo authentication/authenticator
+
+### Exercício 4
+a) Código no arquivo /endpoint/signup
+
+b) Código no arquivo /endpoint/signup
+
+c) Código no arquivo /endpoint/signup
+
+### Exercício 5
+
+a) Código no arquivo /data/getUserByEmail
+
+### Exercício 6

@@ -7,4 +7,5 @@ export const createUser = async(id:string,email:string,password:string):Promise<
         email:email,
         password:password
     })
+    .into("aula50_User")
 }
