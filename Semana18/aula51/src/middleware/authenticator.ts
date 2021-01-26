@@ -6,7 +6,7 @@ dotenv.config()
 
 
 export const generateToken = (payload:authenticationData):string =>{
-    const token: string = jwt.sign({payload},
+    const token: string = jwt.sign(payload,
         process.env.JWT_KEY as string,
         {expiresIn:process.env.JWT_EXPIRE_TIME as string || "1d"})
     return token

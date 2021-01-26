@@ -7,9 +7,12 @@ let errorCode: number = 400
 
 export const selectUserById = async (req:Request,res:Response):Promise<void> =>{
     try{
-        const token = req.headers.authorization as string
-        const verifyToken: authenticationData = getTokenData(token)
-                
+        const {authorization} = req.headers        
+        const verifyToken: authenticationData = getTokenData(authorization as string)        
+        if(verifyToken.role !== "Admin"){
+            errorCode = 401
+            throw new Error("Você não tem permissão")
+        }
         const user = await getUserById(verifyToken.id)
 
         if(!user){
