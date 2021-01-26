@@ -19,7 +19,17 @@ c) Código no arquivo /endpoint/login
 
 ### Exercício 3
 
+a) Query criada para adicionar coluna role pelo workbench
+```sql
+ALTER TABLE aula50_User
+ADD role ENUM("Normal","Admin") DEFAULT "Normal" ;
+```
 
+b) Código no arquivo /types/types e /middleware/authenticator
+
+c) Código no arquivo /endpoints/signup
+
+d) Código no arquivo /endpoints/login
 
 ### Exercício 4
 

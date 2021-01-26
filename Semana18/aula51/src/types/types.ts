@@ -4,6 +4,16 @@ export type loginInput = {
 }
 
 export type authenticationData = {
-    id:string
+    id: string,
+    role: User_Roles
 }
-
+export enum User_Roles{
+    NORMAL = "Normal",
+    ADMIN = "Admin"
+}
+export type user = {
+    id:string,
+    email:string,
+    password:string,
+    role:User_Roles
+}
