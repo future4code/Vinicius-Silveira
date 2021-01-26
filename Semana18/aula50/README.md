@@ -27,14 +27,28 @@ a) Ele define como string o valor vindo do process.env.JWT_KEY.
 b) Código no arquivo authentication/authenticator
 
 ### Exercício 4
-a) Código no arquivo /endpoint/signup
+a) Código no arquivo /endpoints/signup
 
-b) Código no arquivo /endpoint/signup
+b) Código no arquivo /endpoints/signup
 
-c) Código no arquivo /endpoint/signup
+c) Código no arquivo /endpoints/signup
 
 ### Exercício 5
 
 a) Código no arquivo /data/getUserByEmail
 
 ### Exercício 6
+
+a) Código no arquivo /endpoints/login
+
+### Exercício 7 
+
+a) 
+
+b) Código no arquivo /middleware/authenticator
+
+### Exercício 8
+
+a) Código no arquivo /data/getUserById
+
+b) Código no arquivo /endpoints/selectUserById

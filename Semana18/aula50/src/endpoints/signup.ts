@@ -1,5 +1,5 @@
 import { Request,Response } from "express"
-import { generateToken } from "../authentication/authenticator"
+import { generateToken } from "../middleware/authenticator"
 import { createUser } from "../data/createUser"
 import { generateId } from "../middleware/idGenerator"
 import { loginInput } from "../types/types"
