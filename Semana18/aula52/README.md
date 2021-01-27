@@ -23,3 +23,5 @@ CREATE TABLE User_Address(
 
 
 ### Exercício 3
+
+a) Foi feita a refatoração no arquivo /endpoints/signup, onde é feita a inserção dos dados tanto na tabela de usuário, quanto na tabela de endereços. Para isso foi criada a função createAddress para inserir os dados na tabela de endereços.
