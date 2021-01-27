@@ -103,3 +103,13 @@ build/
 
 # TernJS port file
 .tern-port
+
+Semana18/aula50/node_modules
+Semana18/aula50/.env
+Semana18/aula50/build
+Semana18/aula50/package-lock.json
+
+Semana18/aula51/node_modules
+Semana18/aula51/.env
+Semana18/aula51/build
+Semana18/aula51/package-lock.json
