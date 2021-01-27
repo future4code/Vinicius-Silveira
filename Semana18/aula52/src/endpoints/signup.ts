@@ -11,9 +11,13 @@ export const signup = async (req:Request,res:Response): Promise<void> =>{
 
     try{
         const {email,password,role} = req.body as user
-        
+        const {zipcode,local,number,complement} = req.body
+
         if(!email || !password || !role){
             throw new Error("Preencha os dados email, password e role")
+        }
+        if(!zipcode || !local || !number || !complement){
+            throw new Error("Preencha os dados do endereço, cep, rua, numero e complemento(opcional)")
         }
         if (!email.includes("@")){
             errorCode=406
