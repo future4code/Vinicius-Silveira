@@ -48,7 +48,7 @@ export const signup = async (req:Request,res:Response): Promise<void> =>{
         const token: string = generateToken({id:idUser,role})
 
         const idAddresss: string = generateId()
-        await createAddress(idAddresss,local,Number(number),complement,zipcode,address.city,address.state,idUser)
+        await createAddress(idAddresss,local,neighborhood,Number(number),complement,zipcode,address.city,address.state,idUser)
 
         res.status(200).send({"token":token})
 
