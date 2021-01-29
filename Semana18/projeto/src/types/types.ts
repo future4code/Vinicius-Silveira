@@ -15,3 +15,8 @@ export type recipes = {
 export type authenticationData = {
     id:string
 }
+
+export type loginInput = {
+    email:string,
+    password: string
+}
