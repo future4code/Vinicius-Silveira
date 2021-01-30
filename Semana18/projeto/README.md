@@ -1,6 +1,10 @@
 # Cookenu
 * Author: Vinicius Silveira Moraes
 
+## Project's Description
+
+This projects aims to create a database where we can insert users and recipes in the respective tables. The project will be able to create users and recipes as well as search for them, in addition to logging in. These parameters as considered the MVP of this project.
+
 ## Workbench's tables creation
 
 ### Users

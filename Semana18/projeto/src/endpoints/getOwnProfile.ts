@@ -10,6 +10,10 @@ export const getOwnProfile = async(req:Request, res:Response):Promise<void> =>{
         const verifyToken: authenticationData = getTokenData(authorization as string)
         const findUser = await getUserById(verifyToken.id)
         
+        if(!authorization){
+            throw new Error("You must send an token authorization in headers")
+        }
+        
         if(!findUser){
             errorCode = 404
             throw new Error("User not found")

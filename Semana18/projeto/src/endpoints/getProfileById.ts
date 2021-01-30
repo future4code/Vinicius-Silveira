@@ -3,7 +3,7 @@ import { getUserById } from "../data/getUserById."
 import { getTokenData } from "../services/authenticator"
 import { authenticationData } from "../types/types"
 
-let errorCode = 400
+let errorCode:number  = 400
 export const getProfileById = async(req:Request,res:Response):Promise<void> =>{
     try{
         const { authorization } = req.headers
