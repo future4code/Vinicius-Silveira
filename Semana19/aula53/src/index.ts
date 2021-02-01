@@ -7,10 +7,10 @@ const app = express()
 app.use(express.json())
 app.use(cors())
 
-app.put("/signup",signup)
-app.post("/login",login)
-app.get("/all",getAllUsers)
-app.delete("/:id",deleteUser)
+app.put("/signup", signup)
+app.post("/login", login)
+app.get("/all", getAllUsers)
+app.delete("/:id", deleteUser)
 
 const server = app.listen(process.env.PORT || 3003, () =>{
     if(server){

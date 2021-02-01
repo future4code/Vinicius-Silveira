@@ -91,5 +91,5 @@ export const businessDeleteUser = async(id:string,authorization:string) =>{
         throw new Error("Usuário não encontrado")
     }
 
-    await deleteUserById(id)
+    return await deleteUserById(id)
 }
