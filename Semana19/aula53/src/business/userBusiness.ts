@@ -1,7 +1,7 @@
 import { compare } from "bcryptjs";
-import { insertUser, selectUserByEmail } from "../data/userDataBase";
-import { user, User_Roles } from "./entities/user";
-import { generateToken } from "./services/authenticator";
+import { deleteUserById, insertUser, selectAllUsers, selectUserByEmail, selectUserById } from "../data/userDataBase";
+import { authenticationData, user, User_Roles } from "./entities/user";
+import { generateToken, getTokenData } from "./services/authenticator";
 import { generateHash } from "./services/hashManager";
 import { generateId } from "./services/idGenerator";
 
@@ -61,4 +61,35 @@ export const businessLogin = async (
         role: user.role
     })
     return token
+}
+
+export const businessSelectAllUsers = async(authorization:string) =>{
+    if(!authorization){
+        throw new Error("Passe o token de informação no headers")        
+    }
+    
+    const verifyToken: authenticationData = getTokenData(authorization as string)        
+    if(!verifyToken){
+        throw new Error ("Você precisa estar logado !")
+    }
+
+    return await selectAllUsers()    
+}
+
+export const businessDeleteUser = async(id:string,authorization:string) =>{
+    if(!id){
+        throw new Error ("Passe a id por params")
+    }
+    
+    const verifyToken: authenticationData = getTokenData(authorization as string)
+    if(verifyToken.role !=="Admin"){
+        throw new Error("Você não tem permissão para deletar usuário")
+    }
+
+    const user = await selectUserById(id)
+    if(!user){
+        throw new Error("Usuário não encontrado")
+    }
+
+    await deleteUserById(id)
 }

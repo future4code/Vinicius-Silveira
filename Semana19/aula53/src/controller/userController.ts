@@ -1,5 +1,5 @@
 import { Request, Response } from "express"
-import { businessLogin, businessSignup } from "../business/userBusiness"
+import { businessDeleteUser, businessLogin, businessSelectAllUsers, businessSignup } from "../business/userBusiness"
 
 export const signup = async (req:Request,res:Response):Promise<void> =>{
     try{
@@ -29,6 +29,34 @@ export const login = async(req:Request, res:Response):Promise<void> =>{
         res.status(200).send({
             message:"Usuário logado",
             token
+        })
+    }
+    catch(error){
+        res.status(400).send(error.message)
+    }
+}
+
+export const getAllUsers = async (req:Request, res: Response):Promise<void> =>{
+    try{
+        const { authorization } = req.headers
+        const users = await businessSelectAllUsers(authorization as string)
+
+        res.status(200).send(users)        
+    }
+    catch(error){
+        res.status(400).send(error.message)
+    }
+}
+
+export const deleteUser = async(req:Request, res:Response): Promise<void> =>{
+    try{
+        const { authorization } = req.headers
+        const { id } = req.params
+
+        await businessDeleteUser(id,authorization as string)
+
+        res.status(200).send({
+            message:"Usuário deletado com sucesso !"
         })
     }
     catch(error){
