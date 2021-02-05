@@ -1,55 +1,17 @@
 import express, { Express, Request, Response } from "express"
 import cors from "cors"
-import * as jwt from "jsonwebtoken"
-import * as bcrypt from "bcryptjs"
-import { v4 } from "uuid"
-
 /**************************** CONFIG ******************************/
 
 const app: Express = express()
 app.use(express.json())
 app.use(cors())
 
-/**************************** SERVICES ******************************/
+/**************************** SERVER INIT ******************************/
 
-const generateId = (): string => v4()
+app.listen(3003, () => {
+   console.log("Server running on port 3003")
+})
 
-function generateToken(
-   payload: AuthenticationData
-): string {
-   return jwt.sign(
-      payload,
-      process.env.JWT_KEY as string,
-      {
-         expiresIn: process.env.JWT_EXPIRES_IN
-      }
-   )
-}
-
-function getTokenData(
-   token: string
-): AuthenticationData {
-   const result: any = jwt.verify(
-      token,
-      process.env.JWT_KEY as string
-   )
-
-   return { id: result.id, }
-}
-
-const hash = async (
-   plainText: string
-): Promise<string> => {
-   const rounds = Number(process.env.BCRYPT_COST);
-   const salt = await bcrypt.genSalt(rounds);
-   return bcrypt.hash(plainText, salt)
-}
-
-const compare = async (
-   plainText: string, cypherText: string
-): Promise<boolean> => {
-   return bcrypt.compare(plainText, cypherText)
-}
 
 /**************************** ENDPOINTS ******************************/
 
@@ -205,8 +167,3 @@ app.get('/posts/:id', async (req: Request, res: Response) => {
    }
 })
 
-/**************************** SERVER INIT ******************************/
-
-app.listen(3003, () => {
-   console.log("Server running on port 3003")
-})
