@@ -1,12 +1,12 @@
 import express, { Express, Request, Response } from "express"
 import cors from "cors"
-/**************************** CONFIG ******************************/
+import { userRouter } from "./controller/routes/userRouter"
 
 const app: Express = express()
 app.use(express.json())
 app.use(cors())
 
-/**************************** SERVER INIT ******************************/
+app.use("/user",userRouter)
 
 app.listen(3003, () => {
    console.log("Server running on port 3003")
@@ -15,41 +15,8 @@ app.listen(3003, () => {
 
 /**************************** ENDPOINTS ******************************/
 
-app.post('/users/signup', async (req: Request, res: Response) => {
-   try {
-      let message = "Success!"
-      const { name, email, password } = req.body
 
-      if (!name || !email || !password) {
-         res.statusCode = 406
-         message = '"name", "email" and "password" must be provided'
-         throw new Error(message)
-      }
-
-      const id: string = generateId()
-
-      const cypherPassword = await hash(password);
-
-      await connection('labook_users')
-         .insert({
-            id,
-            name,
-            email,
-            password: cypherPassword
-         })
-
-      const token: string = generateToken({ id })
-
-      res.status(201).send({ message, token })
-
-   } catch (error) {
-      res.statusCode = 400
-      let message = error.sqlMessage || error.message
-
-      res.send({ message })
-   }
-})
-
+/*
 app.post('/users/login', async (req: Request, res: Response) => {
    try {
       let message = "Success!"
@@ -167,3 +134,4 @@ app.get('/posts/:id', async (req: Request, res: Response) => {
    }
 })
 
+*/
