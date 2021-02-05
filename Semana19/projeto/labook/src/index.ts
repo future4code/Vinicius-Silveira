@@ -1,28 +1,10 @@
-/**************************** IMPORTS ******************************/
-
 import express, { Express, Request, Response } from "express"
 import cors from "cors"
-import knex from "knex"
-import dotenv from "dotenv"
 import * as jwt from "jsonwebtoken"
 import * as bcrypt from "bcryptjs"
 import { v4 } from "uuid"
-import Knex from "knex"
 
 /**************************** CONFIG ******************************/
-
-dotenv.config()
-
-export const connection: Knex = knex({
-   client: "mysql",
-   connection: {
-      host: process.env.DB_HOST,
-      user: process.env.DB_USER,
-      password: process.env.DB_PASSWORD,
-      port: 3306,
-      database: process.env.DB_NAME,
-   }
-})
 
 const app: Express = express()
 app.use(express.json())

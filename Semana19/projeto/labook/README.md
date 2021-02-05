@@ -16,7 +16,7 @@
 
    BCRYPT_COST = 
    ```
-* Executar `npm run sql-setup` para adicionar as tabelas ao banco de dados (em caso de sucesso, o servidor já estará pronto para receber requisições )
+* Executar `npm run my-sql-setup` para adicionar as tabelas ao banco de dados (em caso de sucesso, o servidor já estará pronto para receber requisições )
 
 ## Endpoints
 
