@@ -1,16 +1,14 @@
 import { hash } from "./services/hashManager";
-import { insertUser } from "../data/userDataBase";
-import { signupInputDTO } from "./entities/user";
+import { insertUser, selectUserByEmail } from "../data/userDataBase";
+import { signupInputDTO, user } from "./entities/user";
 import { generateToken } from "./services/authenticator";
 import { generateId } from "./services/idGenerator";
-
-let errorCode: number = 400
+import { compare } from "bcryptjs";
 
 export const businessSignup = async (
     input: signupInputDTO
 ) => {
-    if(!input.name || input.email || input.password){
-        errorCode = 403
+    if(!input.name || !input.email || !input.password){        
         throw new Error(`Fill all the fields, name, email and password corretly`)
     }
 
@@ -26,6 +24,29 @@ export const businessSignup = async (
     await insertUser(user)
 
     const token: string = generateToken({id})
+
+    return token
+}
+
+export const businessLogin = async (
+    email: string,
+    password: string
+) => {
+    if(!email || !password){
+        throw new Error ("'email' and 'password' must be provided")
+    }
+
+    const user: user = await selectUserByEmail(email)
+    if(!user){
+        throw new Error('User not found')
+    }
+
+    const checkPassword: boolean = await compare(password,user.password)
+    if(!checkPassword){
+        throw new Error ('Invalid Password')
+    }
+
+    const token: string = generateToken({id:user.id})
 
     return token
 }
