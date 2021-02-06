@@ -11,3 +11,9 @@ export type post = {
     createdAt: Date,
     authorId: string
 }
+
+export type createPostDTO = {
+    photo: string,
+    description: string,
+    type: POST_TYPES    
+}
