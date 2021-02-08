@@ -5,8 +5,6 @@ a) Criado a interface chamada "User", no arquivo business/entities/user.ts
 
 b) Criada a função no arquivo /src/index.ts
 
-### Exercício 2
+### Exercício 3
 
-a) Com o saldo maior que o valor de compra a função retorna ok.
-
-b)
+c) A maior dificuldade foi em criar a função, tive que usar a função do dicas.

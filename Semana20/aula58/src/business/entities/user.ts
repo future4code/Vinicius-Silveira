@@ -3,23 +3,23 @@ export interface User {
     balance: number
 }
 
-enum LOCATION {
+export enum LOCATION {
     EUA = "EUA",
     BRAZIL = "BRAZIL",
-  }
+}
   
-  enum NACIONALITY {
+export enum NACIONALITY {
     BRAZILIAN = "BRAZILIAN",
     AMERICAN = "AMERICAN",
-  }
+}
   
-  interface Userperson {
+export interface Userperson {
     name: string;
     age: number;
     nacionality: NACIONALITY;
   }
   
-  interface Casino {
+export interface Casino {
     name: string;
     location: LOCATION;
-  }
+}
